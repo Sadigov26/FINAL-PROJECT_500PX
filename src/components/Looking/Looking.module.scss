@@ -1,0 +1,174 @@
+.looking {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    min-height: 130vh;
+    width: 100%;
+
+    .yellowBottom {
+        position: absolute;
+        bottom: -1px;
+        right: -1px;
+        width: 70%;
+    }
+
+    .lookingContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 85%;
+        gap: 50px;
+
+        .inspiration {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+
+            .inspirationDesc {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 70%;
+                border-bottom: 1px solid gray;
+
+                .inspirationLeft {
+                    display: flex;
+                    align-items: start;
+                    justify-content: start;
+                    flex-direction: column;
+
+                    h3 {
+                        color: black;
+                        font-size: 36px;
+                    }
+
+                    p {
+                        color: rgb(34, 34, 34);
+                        font-size: 17px;
+                        margin-bottom: 25px;
+                    }
+                }
+
+                .inspirationRight {
+                    button {
+                        border: none;
+                        padding: 17px 35px;
+                        background-color: #FFDD66;
+                        font-size: 18px;
+                        font-weight: 700;
+                        border-radius: 100px;
+                    }
+                }
+            }
+        }
+
+        .whatMakesUsDifferent {
+            .whatMakesUsDifferentTop {
+                width: 100%;
+                text-align: center;
+                margin: 26px;
+
+                h1 {
+                    font-size: 40px;
+                    font-weight: 600;
+                }
+            }
+
+            .whatMakesUsDifferentBottom {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+                width: 100%;
+
+                .whatMakesUsDifferentBottomCard {
+                    display: flex;
+                    align-items: start;
+                    justify-content: start;
+                    flex-direction: column;
+                    width: 20%;
+                    gap: 23px;
+
+                    svg {
+                        width: 70px;
+                        height: auto;
+
+                    }
+
+                    p {
+                        color: rgb(34, 34, 34);
+                        font-size: 16px;
+                        font-weight: 400;
+                    }
+
+                    h3 {
+                        color: black;
+                        font-weight: 700;
+                        font-size: 28px;
+                    }
+                }
+            }
+        }
+
+        .getTheApp {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+
+            .getTheAppLeft {
+                display: flex;
+                align-items: start;
+                justify-content: start;
+                flex-direction: column;
+                width: 40%;
+                gap: 40px;
+
+                .getTheAppLeftDesk {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 12px;
+
+                    h1 {
+                        font-size: 36px;
+                        font-weight: 700;
+                    }
+                    p{
+                        font-size: 18px;
+                        font-weight: 400;
+                    }
+                }
+
+                .getTheAppStore {
+                    display: flex;
+                    gap: 20px;
+
+                    a {
+                        width: 30%;
+                        height: 55px;
+                        border-radius: 10px;
+                        overflow: hidden;
+                        display: flex;
+                        align-items: center;
+                        gap: 20px;
+
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+
+            .getTheAppRight {
+                z-index: 1;
+
+                img {
+                    width: 70%;
+                }
+            }
+        }
+    }
+}
