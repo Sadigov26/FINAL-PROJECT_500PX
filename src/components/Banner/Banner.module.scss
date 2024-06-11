@@ -1,0 +1,89 @@
+.Banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding-top: 40px;
+
+    .BannerContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 30px;
+
+        .BannerContainerTop {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 16px;
+
+            h1 {
+                font-size: 30px;
+                color: black;
+
+            }
+
+            p {
+                font-size: 18px;
+                color: rgb(34, 34, 34);
+            }
+
+            button {
+                font-size: 24px;
+                padding: 17px 25px;
+                background-color: #222222;
+                border-radius: 100px;
+                color: white;
+                font-weight: 600;
+            }
+        }
+
+        .BannerContainerBottom {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 90%;
+            flex-wrap: wrap;
+
+            .BannerContainerBottomImg {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-wrap: wrap;
+                width: 80%;
+                gap: 15px;
+
+                .imageBanner {
+                    position: relative;
+                    width: auto;
+                    height: 330px;
+
+                    &:hover p {
+                        opacity: 1;
+                    }
+
+                    .BannerImageDrop {
+                        position: absolute;
+                        bottom: 1px;
+                        width: 100%;
+                        text-align: end;
+                        background: rgba(0, 0, 0, 0.4);
+                        color: #fff;
+                        opacity: 0;
+                        transition: all .3s ease;
+                        font-size: 12px;
+                        font-weight: bold;
+                    }
+                }
+
+                img {
+                    width: auto;
+                    height: 330px;
+                }
+
+            }
+        }
+    }
+}

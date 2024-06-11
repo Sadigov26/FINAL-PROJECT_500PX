@@ -10,6 +10,9 @@ header {
     align-items: center;
     justify-content: center;
     width: 100%;
+    position: fixed;
+    z-index: 111;
+    background-color: white;
 
     .containerHeader {
         display: flex;
@@ -119,4 +122,3 @@ header {
 
     }
 }
-
