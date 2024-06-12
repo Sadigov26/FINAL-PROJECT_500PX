@@ -8,6 +8,7 @@
     align-items: center;
     background-color: #F7F8FA;
     padding-top: 40px;
+    flex-direction: column;
 
     .ComparePlansContainer {
         width: 85%;
@@ -16,6 +17,8 @@
         align-items: center;
         flex-direction: column;
         gap: 30px;
+
+        padding-bottom: 40px;
 
         .ComparePlansContainerTop {
             display: flex;
@@ -228,6 +231,70 @@
                         font-size: 14px;
                         margin-bottom: 13px;
                         font-weight: 500;
+                    }
+                }
+            }
+        }
+    }
+
+    .FeaturePlans {
+        width: 100%;
+        min-height: 100vh;
+        background-color: #fff;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .FeaturePlansContainer {
+            display: flex;
+            border: 1px solid rgb(209, 206, 206);
+            padding: 10px;
+            align-items: center;
+            justify-content: center;
+            width: 30%;
+            flex-direction: column;
+            gap: 1 0px;
+
+            .FeaturePlansContainerTop {
+                width: 100%;
+                display: flex;
+                align-items: start;
+
+                h1 {
+                    font-size: 24px;
+                    font-weight: 700;
+                }
+            }
+
+            .FeaturePlansContainerBottom {
+                display: flex;
+                width: 100%;
+                justify-content: space-between;
+                align-items: center;
+                border-bottom: 1px solid rgb(199, 197, 197);
+
+                h3 {
+                    font-size: 14px;
+                    margin-bottom: 20px;
+                    margin-top: 20px;
+
+                    color: rgba(0, 0, 0, 0.65);
+                }
+
+                .RightPlans {
+                    width: 40%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    h2 {
+                        color: rgba(0, 0, 0, 0.65);
+                        font-size: 14px;
+                        margin-bottom: 20px;
+                        margin-top: 20px;
+
                     }
                 }
             }
