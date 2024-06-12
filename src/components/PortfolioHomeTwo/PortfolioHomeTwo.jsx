@@ -14,13 +14,15 @@ const PortfolioHomeTwo = () => {
             </div>
             <div className={styles.photographersHomeTwo}>
                 <div className={styles.photographersHomeContainerTwo}>
-                    <div style={{ display: "flex", flexDirection: "column", gap: "15px", alignItems: "center" }}>
-                        <FontAwesomeIcon icon={faTrophy} />
+                    <div className={styles.photographersHomeContainerTwoDesk}>
+                        <FontAwesomeIcon icon={faTrophy} style={{fontSize:"60px"}} />
                         <h3>Take photos. Win prizes.</h3>
                         <p>Quests are creative photo challenges that encourage you to test your skills and submit your best work for a chance to win exciting prizes. We launch new Quests with unique themes every week so there is always something for everyone!</p>
                         <button>View Quests</button>
                     </div>
-                    <img src={imgPortfolioTwo} alt="" />
+                    <div className={styles.ImagePhTwo}>
+                        <img src={imgPortfolioTwo} alt="" />
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,5 +1,5 @@
-.PortfolioHomeTwo {
-    background-image: url("../../about/banner_quests_desktop@2x.69ef9bf3.png");
+.PortfolioHomeThree { 
+    background-image: url("../../about/banner_licensing_desktop@2x.440dbd64.png");
     min-height: 56vh;
     display: flex;
     align-items: center;
@@ -11,12 +11,12 @@
     background-position: center;
     gap: 30px;
 
-    .portofiloIconTwo {
+    .portofiloIconThree { 
         font-size: 55px;
         padding: 20px;
         border-radius: 100px;
-        background-color: #E44059;
-        color: white;
+        background-color: #FEDF46;
+        color: rgb(0, 0, 0);
     }
 
     h3 {
@@ -26,14 +26,14 @@
     }
 }
 
-.photographersHomeTwo {
+.photographersHomeThree { 
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     padding-top: 40px;
 
-    .photographersHomeContainerTwo {
+    .photographersHomeContainerThree { 
         display: flex;
         align-items: center;
         justify-content: center;
@@ -41,7 +41,7 @@
         gap: 30px;
         width: 80%;
 
-        .photographersHomeContainerTwoDesk {
+        .photographersHomeContainerThreeDesk { 
             display: flex;
             gap: 15px;
             flex-direction: column;
@@ -54,7 +54,7 @@
             }
 
             p {
-                font-size: 19px;
+                font-size: 20px;
                 font-weight: 400;
             }
 
@@ -68,7 +68,7 @@
             }
         }
 
-        .ImagePhTwo {
+        .ImagePhThree { 
             width: 100%;
 
             img {

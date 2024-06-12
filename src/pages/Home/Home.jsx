@@ -6,6 +6,9 @@ import BestEditor from '../../components/BestEditor/BestEditor'
 import Banner from '../../components/Banner/Banner'
 import PortfolioHome from '../../components/PortfolioHome/PortfolioHome'
 import PortfolioHomeTwo from '../../components/PortfolioHomeTwo/PortfolioHomeTwo'
+import PortfolioHomeThree from '../../components/PortfolioHomeThree/PortfolioHomeThree '
+import CommunityHome from '../../components/CommunityHome/CommunityHome'
+import Footer from '../../components/Footer/Footer'
 
 const Home = () => {
     return (
@@ -17,6 +20,9 @@ const Home = () => {
             <Banner />
             <PortfolioHome />
             <PortfolioHomeTwo />
+            <PortfolioHomeThree />
+            <CommunityHome />
+            <Footer />
         </div>
     )
 }
