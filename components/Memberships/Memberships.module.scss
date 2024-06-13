@@ -1,0 +1,61 @@
+.Memberships {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("../../about/header_intro_promotion.f005fd83.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 80vh;
+    position: relative;
+
+    .MembershipsContainer {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        width: 80%;
+
+
+        .MembershipsContainerDesk {
+            display: flex;
+            align-items: start;
+            justify-content: center;
+            flex-direction: column;
+            width: 30%;
+            text-align: start;
+            gap: 30px;
+
+            p {
+                font-size: 21px;
+                color: white;
+            }
+
+            .buttonau {
+                font-size: 21px;
+                color: #20E6C3;
+                padding: 15px 20px;
+                border-radius: 100px;
+                border: 2px solid #20E6C3;
+                background-color: transparent;
+                cursor: pointer;
+                text-decoration: none;
+            }
+
+            h1 {
+                font-size: 40px;
+                color: white;
+
+                span {
+                    color: #20E6C3;
+                }
+            }
+        }
+    }
+    .svgwavestop {
+        width: 100%;
+        height: auto;
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+    }
+}

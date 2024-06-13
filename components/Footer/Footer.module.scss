@@ -1,0 +1,143 @@
+@mixin flex-center {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+$footer-background: #f8f9fa;
+$footer-text-color: #343a40;
+
+.Footer {
+    background-color: $footer-background;
+    color: $footer-text-color;
+    padding: 20px;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    .FooterContainerLarge {
+        display: flex;
+        justify-content: start;
+        align-items: start;
+        width: 90%;
+
+        .FooterContainer {
+            display: flex;
+            justify-content: start;
+            align-items: start;
+            flex-direction: column;
+            margin: 0 auto;
+            width: 100%;
+
+            .FooterContainerTop {
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column;
+                width: 80%;
+
+                .FooterNavbar {
+                    flex: 1;
+                    margin-right: 20px;
+                    gap: 20px;
+                    display: flex;
+                    flex-direction: column;
+
+                    h3 {
+                        font-size: 26px;
+                        margin-bottom: 10px;
+                        color: rgb(109, 115, 120);
+                    }
+
+                    ul {
+                        list-style-type: none;
+                        padding-left: 0;
+                        gap: 20px;
+                        display: flex;
+                        flex-direction: column;
+
+                        li {
+                            margin-bottom: 8px;
+
+                            a {
+                                color: rgb(132, 139, 145);
+                                ;
+                                text-decoration: none;
+                                font-weight: 400;
+                                font-size: 19px;
+
+                                &:hover {
+                                    text-decoration: underline;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .FooterApp {
+                    flex: 1;
+                    display: flex;
+                    gap: 20px;
+                    flex-direction: column;
+
+                    h3 {
+                        font-size: 21px;
+                        color:
+                            rgb(109, 115, 120);
+                        margin-bottom: 10px;
+                    }
+
+                    .getTheAppStore {
+                        display: flex;
+                        gap: 20px;
+
+                        img {
+                            border-radius: 10px;
+                            width: 100%;
+                        }
+
+                        a {
+                            display: block;
+                            width: 150px
+                        }
+                    }
+                }
+            }
+
+            .FooterContainerBottom {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                margin-top: 20px;
+                border-top: 1px solid rgba(109, 115, 120, 0.609);
+
+                .FooterContainerLeft {
+                    h1 {
+                        margin-top: 20px;
+                        color: rgb(109, 115, 120);
+                        font-size: 22px;
+                    }
+                }
+
+                .FooterContainerRight {
+                    ul {
+                        display: flex;
+                        gap: 20px;
+
+                        li {
+                            list-style: none;
+
+                            a {
+                                text-decoration: none;
+                                color: rgba(0, 0, 0, 0.65);
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}

@@ -1,0 +1,301 @@
+
+
+.ComparePlans {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F7F8FA;
+    padding-top: 40px;
+    flex-direction: column;
+    
+    .ComparePlansContainer {
+        width: 85%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 30px;
+
+        padding-bottom: 40px;
+
+        .ComparePlansContainerTop {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .ComparePlansContainerMidle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+
+            .switch {
+                --button-width: 3.5em;
+                --button-height: 2em;
+                --toggle-diameter: 1.5em;
+                --button-toggle-offset: calc((var(--button-height) - var(--toggle-diameter)) / 2);
+                --toggle-shadow-offset: 10px;
+                --toggle-wider: 3em;
+                --color-grey: #cccccc;
+                --color-green: #222222;
+            }
+
+            .slider {
+                display: inline-block;
+                width: var(--button-width);
+                height: var(--button-height);
+                background-color: var(--color-grey);
+                border-radius: calc(var(--button-height) / 2);
+                position: relative;
+                transition: 0.3s all ease-in-out;
+            }
+
+            .slider::after {
+                content: "";
+                display: inline-block;
+                width: var(--toggle-diameter);
+                height: var(--toggle-diameter);
+                background-color: #fff;
+                border-radius: calc(var(--toggle-diameter) / 2);
+                position: absolute;
+                top: var(--button-toggle-offset);
+                transform: translateX(var(--button-toggle-offset));
+                box-shadow: var(--toggle-shadow-offset) 0 calc(var(--toggle-shadow-offset) * 4) rgba(0, 0, 0, 0.1);
+                transition: 0.3s all ease-in-out;
+            }
+
+            .switch input[type="checkbox"]:checked+.slider {
+                background-color: var(--color-green);
+            }
+
+            .switch input[type="checkbox"]:checked+.slider::after {
+                transform: translateX(calc(var(--button-width) - var(--toggle-diameter) - var(--button-toggle-offset)));
+                box-shadow: calc(var(--toggle-shadow-offset) * -1) 0 calc(var(--toggle-shadow-offset) * 4) rgba(0, 0, 0, 0.1);
+            }
+
+            .switch input[type="checkbox"] {
+                display: none;
+            }
+
+            .switch input[type="checkbox"]:active+.slider::after {
+                width: var(--toggle-wider);
+            }
+
+            .switch input[type="checkbox"]:checked:active+.slider::after {
+                transform: translateX(calc(var(--button-width) - var(--toggle-wider) - var(--button-toggle-offset)));
+            }
+
+        }
+
+        .ComparePlansContainerBottom {
+            display: flex;
+            justify-content: center;
+            align-items: start;
+            gap: 20px;
+            width: 50%;
+
+            .ComparePlansOne,
+            .ComparePlansTwo {
+                width: 100%;
+                background-color: #ffff;
+
+
+
+                .ComparePlansOneTop {
+                    width: 100%;
+                    height: 110px;
+                    background-color: #0CEFE8;
+                    color: black;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    h1 {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                    }
+
+                }
+
+
+                .ComparePlansTwoTop {
+                    width: 100%;
+                    height: 40px;
+                    height: 110px;
+                    background-color: #222222;
+                    color: white;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    h1 {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                    }
+
+                }
+
+                .ComparePlansTwoBottomCheck {
+                    width: 90%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: start;
+                    position: relative;
+
+                    .off20 {
+                        width: 90px;
+                        right: -15px;
+                        position: absolute;
+                    }
+
+                }
+
+                .ComparePlansTwoBottom  {
+                    margin-top: 20px;
+                    display: flex;
+                    min-height: 70vh;
+                    justify-content: space-between;
+                    align-items: center;
+                    flex-direction: column;
+
+                    del {
+                        color: gray;
+
+                    }
+
+                    h1 {
+                        font-size: 36px;
+                    }
+
+                    p {
+                        font-size: 16px;
+                        color:
+                            rgb(109, 115, 120);
+                    }
+
+                    h5 {
+                        display: flex;
+                        align-items: center;
+                        gap: 12px;
+                        margin-top: 7px;
+                        font-size: 18px;
+                        color:
+                            rgb(34, 34, 34);
+                        font-weight: 400;
+
+                        span {
+                            background-color: black;
+                            color: white;
+                            padding: 5px 20px;
+                            font-size: 12px;
+                        }
+                    }
+                }
+
+                .ComparePlansTwoBottomSignBtn {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    gap: 10px;
+
+
+                    button {
+                        font-size: 17px;
+                        color: white;
+                        border-radius: 100px;
+                        background-color: black;
+                        width: 90%;
+                        padding-top: 10px;
+                        padding-bottom: 10px;
+                        transition: 0.2s;
+                        border: 2px solid black;
+
+                        &:hover {
+                            background-color: white;
+                            color: black;
+                            transition: 0.2s;
+                        }
+                    }
+
+                    p {
+                        text-align: center;
+                        color: black;
+                        font-size: 14px;
+                        margin-bottom: 13px;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+    }
+
+    .FeaturePlans {
+        width: 100%;
+        min-height: 100vh;
+        background-color: #fff;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .FeaturePlansContainer {
+            display: flex;
+            border: 1px solid rgb(209, 206, 206);
+            padding: 10px;
+            align-items: center;
+            justify-content: center;
+            width: 30%;
+            flex-direction: column;
+            gap: 1 0px;
+
+            .FeaturePlansContainerTop {
+                width: 100%;
+                display: flex;
+                align-items: start;
+
+                h1 {
+                    font-size: 24px;
+                    font-weight: 700;
+                }
+            }
+
+            .FeaturePlansContainerBottom {
+                display: flex;
+                width: 100%;
+                justify-content: space-between;
+                align-items: center;
+                border-bottom: 1px solid rgb(199, 197, 197);
+
+                h3 {
+                    font-size: 14px;
+                    margin-bottom: 20px;
+                    margin-top: 20px;
+
+                    color: rgba(0, 0, 0, 0.65);
+                }
+
+                .RightPlans {
+                    width: 40%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    h2 {
+                        color: rgba(0, 0, 0, 0.65);
+                        font-size: 14px;
+                        margin-bottom: 20px;
+                        margin-top: 20px;
+
+                    }
+                }
+            }
+        }
+    }
+}
