@@ -41,7 +41,7 @@ const Header = () => {
                   </svg></a>
                   {isMenuOpen && (
                     <ul className={styles.licensing}>
-                      <li><a href="#">About Liscensing</a></li>
+                      <li><a href="/licensing">About Liscensing</a></li>
                       <li><a href="#">Become a contributor</a></li>
                       <li><a href="#">Submission requirements</a></li>
                       <li><a href="#">Content types</a></li>

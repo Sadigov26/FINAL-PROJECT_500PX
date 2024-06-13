@@ -42,7 +42,7 @@ const ComparePlans = () => {
 
     return (
         <div>
-            <div className={styles.ComparePlans}>
+            <div className={styles.ComparePlans} >
                 <div className={styles.ComparePlansContainer}>
                     <div className={styles.ComparePlansContainerTop}>
                         <h1>Membership plans</h1>
