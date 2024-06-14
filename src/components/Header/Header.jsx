@@ -7,12 +7,15 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 const Header = () => {
   const [isModalOpen, setModalOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
   const openModal = () => setModalOpen(true);
   const closeModal = () => setModalOpen(false);
+
+
   return (
     <div>
       <header>
@@ -33,7 +36,7 @@ const Header = () => {
             <div className={styles.containerHeaderNavbar}>
               <ul>
                 <li><a href="#">Discover</a></li>
-                <li><a onClick={toggleMenu} style={{ display: "flex", alignItems: "center", cursor:"pointer" }}>Licensing
+                <li><a onClick={toggleMenu} style={{ display: "flex", alignItems: "center", cursor: "pointer" }}>Licensing
                   <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
                       d="M4.57926 7.03499C4.57933 6.73524 4.75993 6.46502 5.03687 6.35032C5.31381 6.23562 5.63258 6.299 5.84457 6.51093L11.2505 11.9168L16.6564 6.51093C16.9472 6.23002 17.4096 6.23404 17.6955 6.51996C17.9814 6.80589 17.9854 7.26821 17.7045 7.55906L11.7745 13.489C11.4851 13.7784 11.0159 13.7784 10.7264 13.489L4.79645 7.55906C4.65743 7.42008 4.57931 7.23157 4.57926 7.03499Z"
@@ -42,16 +45,17 @@ const Header = () => {
                   {isMenuOpen && (
                     <ul className={styles.licensing}>
                       <li><a href="/licensing">About Liscensing</a></li>
-                      <li><a href="#">Become a contributor</a></li>
-                      <li><a href="#">Submission requirements</a></li>
-                      <li><a href="#">Content types</a></li>
-                      <li><a href="#">Content distribute</a></li>
-                      <li><a href="#">Commercial Grants</a></li>
+                      <li><a href="/licensing/licensing">Stock photo licensing</a></li>
+                      <li><a href="/licensing/contribute">Become a contributor</a></li>
+                      <li><a href="/licensing/requirements">Submission requirements</a></li>
+                      <li><a href="/licensing/content">Content types</a></li>
+                      <li><a href="/licensing/distribution">Content distribute</a></li>
+                      <li><a href="/grants">Commercial Grants</a></li>
                     </ul>
                   )}
                 </li>
                 <li><a href="/upgrade" >Memberships</a></li>
-                <li><a href="#">Quests</a></li>
+                <li><a href="/quests">Quests</a></li>
                 <li><a href="#">Blog</a></li>
                 <li><a href="/awards_winners_2023">Award Winners</a></li>
               </ul>

@@ -35,20 +35,20 @@ const Footer = () => {
                                 <div className={styles.FooterNavbar}>
                                     <h3>Licensing</h3>
                                     <ul>
-                                        <li><a href="#">About Licensing</a></li>
-                                        <li><a href="#">Become a Contributor</a></li>
-                                        <li><a href="#">Submission requirements</a></li>
-                                        <li><a href="#">Content types</a></li>
-                                        <li><a href="#">Distribution</a></li>
+                                        <li><a href="/licensing">About Licensing</a></li>
+                                        <li><a href="/licensing/contribute">Become a Contributor</a></li>
+                                        <li><a href="/licensing/requirements">Submission requirements</a></li>
+                                        <li><a href="/licensing/content">Content types</a></li>
+                                        <li><a href="/licensing/distribution">Distribution</a></li>
                                     </ul>
                                 </div>
                                 <div className={styles.FooterNavbar}>
                                     <h3>Social</h3>
                                     <ul>
-                                        <li><a style={{ display: "flex", alignItems: "center", gap: "15px" }} href="https://www.facebook.com/500px" target="_blank"><FaFacebookF /> Facebook</a></li>
-                                        <li><a style={{ display: "flex", alignItems: "center", gap: "15px" }} href="https://x.com/500px?mx=2" target="_blank"><FaTwitter /> Twitter</a></li>
-                                        <li><a style={{ display: "flex", alignItems: "center", gap: "15px" }} href="https://www.instagram.com/500px/" target="_blank"><IoLogoInstagram /> Instagram</a></li>
-                                        <li><a style={{ display: "flex", alignItems: "center", gap: "15px" }} href="https://www.pinterest.ca/500px/" target="_blank"><FaPinterestP /> Pinterest</a></li>
+                                        <li><a style={{ display: "flex", alignItems: "center", gap: "15px" }} href="https://www.facebook.com/500px" target="blank"><FaFacebookF /> Facebook</a></li>
+                                        <li><a style={{ display: "flex", alignItems: "center", gap: "15px" }} href="https://x.com/500px?mx=2" target="blank"><FaTwitter /> Twitter</a></li>
+                                        <li><a style={{ display: "flex", alignItems: "center", gap: "15px" }} href="https://www.instagram.com/500px/" target="blank"><IoLogoInstagram /> Instagram</a></li>
+                                        <li><a style={{ display: "flex", alignItems: "center", gap: "15px" }} href="https://www.pinterest.ca/500px/" target="blank"><FaPinterestP /> Pinterest</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -66,9 +66,9 @@ const Footer = () => {
                             </div>
                             <div className={styles.FooterContainerRight}>
                                 <ul>
-                                    <li><a href="#">Terms</a></li>
-                                    <li><a href="#">Privacy</a></li>
-                                    <li><a href="#">Support</a></li>
+                                    <li><a href="https://500px.com/terms" target='blank'>Terms</a></li>
+                                    <li><a href="https://500px.com/privacy" target='blank'>Privacy</a></li>
+                                    <li><a href="https://support.500px.com/hc/en-us" target='blank'>Support</a></li>
                                 </ul>
                             </div>
                         </div>
