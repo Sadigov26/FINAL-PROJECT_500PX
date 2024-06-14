@@ -34,7 +34,7 @@ header {
             .containerHeaderNavbar {
                 ul {
                     display: flex;
-                    gap: 35px;
+                    gap: 30px;
 
                     li {
                         list-style: none;
@@ -43,7 +43,7 @@ header {
                         a {
                             text-decoration: none;
                             color: black;
-                            font-size: 19px;
+                            font-size: 18px;
                             transition: 0.2s;
 
                             &:hover {
