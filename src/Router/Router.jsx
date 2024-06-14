@@ -13,6 +13,10 @@ import Releases from '../pages/Releases/Releases'
 import ChoosingKeywords from '../pages/ChoosingKeywords/ChoosingKeywords'
 import ContentTypes from '../pages/ContentTypes/ContentTypes'
 import CommercialGrants from '../pages/CommercialGrants/CommercialGrants'
+import Login from '../pages/Login/Login'
+import Register from '../pages/Register/Register'
+import Recover from '../pages/Recover/Recover'
+import Signup from '../pages/Signup/Signup'
 
 const Router = () => {
   return (
@@ -33,6 +37,10 @@ const Router = () => {
           <Route path='/licensing/content' element={<ContentTypes />} />
           <Route path='/licensing/distribution' element={<Lisans />} />
           <Route path='/grants' element={<CommercialGrants />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/register' element={<Register />} />
+          <Route path='/recover' element={<Recover />} />
+          <Route path='/signup' element={<Signup />} />
         </Routes>
       </BrowserRouter>
     </div>

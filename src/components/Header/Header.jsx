@@ -83,8 +83,8 @@ const Header = () => {
               <Modal isOpen={isModalOpen} onClose={closeModal} />
             </div>
             <div className={styles.containerHeaderUser}>
-              <button style={{ border: "none" }}>Log in</button>
-              <button>Sign up</button>
+              <a href='/login' className={styles.btnUsr} style={{ border: "none" }}>Log in</a>
+              <a href='/register' className={styles.btnUsr} > Sign up</a>
             </div>
           </div>
 
