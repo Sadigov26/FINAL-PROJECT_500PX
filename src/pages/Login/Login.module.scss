@@ -173,7 +173,7 @@
                     border: 1px solid rgba(128, 128, 128, 0.507);
                 }
 
-                input[type=text]:focus {
+                input:focus {
                     border: 1px solid #0056a7;
                 }
 
@@ -189,7 +189,7 @@
                         font-size: 14px;
                     }
 
-                    a {
+                    a  {
                         font-size: 14px;
                         text-decoration: none;
                         color: rgb(8, 112, 209);
