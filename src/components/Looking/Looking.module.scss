@@ -6,6 +6,31 @@
     min-height: 130vh;
     width: 100%;
 
+    .signUpHome {
+        display: none;
+        text-align: center;
+
+        button {
+            margin-top: 16px;
+            padding: 15px 32px;
+            background: #2A2A2A;
+            color: rgb(255, 255, 255);
+            font-size: 24px;
+            width: 216px;
+            border-radius: 50px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 700;
+            margin-bottom: 25px;
+
+            &:hover {
+                background: #000000;
+                color: rgb(255, 255, 255);
+                cursor: pointer;
+            }
+        }
+    }
+
     .yellowBottom {
         position: absolute;
         bottom: -1px;
@@ -125,7 +150,7 @@
                 align-items: start;
                 justify-content: start;
                 flex-direction: column;
-                width: 40%;
+                width: 100%;
                 gap: 40px;
 
                 .getTheAppLeftDesk {
@@ -137,7 +162,9 @@
                         font-size: 36px;
                         font-weight: 700;
                     }
-                    p{
+
+                    p {
+                        width: 65%;
                         font-size: 18px;
                         font-weight: 400;
                     }
@@ -148,8 +175,9 @@
                     gap: 20px;
 
                     a {
-                        width: 30%;
-                        height: 55px;
+                        width: 23%;
+                        z-index: 45;
+                        height: 60px;
                         border-radius: 10px;
                         overflow: hidden;
                         display: flex;
@@ -172,4 +200,130 @@
             }
         }
     }
+}
+
+@media screen and (min-width:280px)and (max-width:860px) {
+    .looking {
+        flex-direction: column;
+
+        .signUpHome {
+            width: 90%;
+            display: block;
+            min-height: 15vh;
+
+            button {
+                width: 100%;
+            }
+        }
+
+        .lookingContainer {
+            width: 100%;
+
+            .inspiration {
+                width: 95%;
+
+                .inspirationDesc {
+                    flex-direction: column;
+                    width: 90%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+
+                    .inspirationLeft {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        flex-direction: column;
+                        gap: 20px;
+                        width: 100%;
+                        text-align: center;
+                    }
+
+                    .inspirationRight {
+                        width: 100%;
+
+                        button {
+                            width: 89%;
+                            margin-bottom: 20px;
+                        }
+                    }
+                }
+            }
+
+            .whatMakesUsDifferent {
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+
+                .whatMakesUsDifferentTop {
+                    width: 80%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    h1 {
+
+                        font-size: 50px;
+                        margin: 0px;
+                    }
+                }
+
+                .whatMakesUsDifferentBottom {
+                    flex-direction: column;
+                    width: 100%;
+
+                    .whatMakesUsDifferentBottomCard {
+                        width: 90%;
+                        margin-top: 20px;
+                        text-align: center;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        flex-direction: column;
+                    }
+                }
+            }
+        }
+
+        .getTheApp {
+            flex-direction: column;
+            width: 100%;
+            text-align: center;
+
+            .getTheAppLeft {
+                width: 100%;
+                display: flex;
+                gap: 20px;
+
+                .getTheAppLeftDesk {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 100%;
+
+                }
+
+                .getTheAppStore {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 100%;
+
+                    a {
+
+                        img {
+                            width: 50%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+
 }

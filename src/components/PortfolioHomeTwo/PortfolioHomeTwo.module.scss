@@ -48,6 +48,7 @@
             align-items: start;
             text-align: start;
             width: 100%;
+
             h3 {
                 font-size: 40px;
                 font-weight: 700;
@@ -76,4 +77,22 @@
             }
         }
     }
+}
+
+@media screen and (min-width:280px)and (max-width:860px) {
+    .photographersHomeTwo {
+        .photographersHomeContainerTwo {
+            width: 90%;
+            flex-direction: column;
+
+            .photographersHomeContainerTwoDesk {
+                text-align: center;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+    }
+
 }

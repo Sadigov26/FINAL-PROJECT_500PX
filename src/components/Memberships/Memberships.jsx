@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Memberships.module.scss'; // veya stil dosyanızın yolu
+import styles from './Memberships.module.scss'; 
 
 const Memberships = () => {
     const scrollToPlans = () => {

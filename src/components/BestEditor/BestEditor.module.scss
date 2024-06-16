@@ -25,3 +25,14 @@
         color: white;
     }
 }
+
+@media screen and (min-width:280px)and (max-width:860px) {
+    .BestEditor {
+        text-align: center;
+
+        span {
+            font-size: 48px;
+        }
+    }
+
+}

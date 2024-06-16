@@ -13,6 +13,36 @@
         flex-direction: column;
         gap: 20px;
 
+        .TableContents {
+            display: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .licensingg {
+
+            a {
+                width: 100%;
+                padding: 10px;
+                text-decoration: none;
+                color: black;
+                font-size: 18px;
+                font-size: 400;
+                display: block;
+                padding: 10px;
+                text-decoration: none;
+                color: black;
+                border-left: 3px solid #fff;
+                font-weight: 500;
+
+                &:hover {
+                    border-left: 3px solid #2986F7;
+                    background-color: #F7F8FA;
+                }
+            }
+        }
+
+
         .LicensingStartingContainerTop {
             width: 100%;
             text-align: start;
@@ -122,5 +152,38 @@
     border-left: 3px solid #2986F7;
     background-color: #F7F8FA;
     font-weight: bold;
+
+}
+
+@media screen and (min-width:280px)and (max-width:860px) {
+    .LicensingStarting {
+        .LicensingStartingContainer {
+            .LicensingStartingContainerTop {
+                display: none;
+            }
+
+            .TableContents {
+                display: block;
+            }
+
+            .LicensingStartingContainerBottom {
+                .LicensingBottomNavbar {
+                    display: none;
+                }
+
+                .LicensingBottomDesk {
+                    width: 100%;
+                    .LicensingBottomDeskSSS{
+                        img{
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+
 
 }

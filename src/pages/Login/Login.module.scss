@@ -13,7 +13,6 @@
         justify-content: center;
         flex-direction: column;
         gap: 20px;
-        width: 25%;
         padding-top: 20px;
         padding-bottom: 20px;
         background-color: #fff;
@@ -189,7 +188,7 @@
                         font-size: 14px;
                     }
 
-                    a  {
+                    a {
                         font-size: 14px;
                         text-decoration: none;
                         color: rgb(8, 112, 209);
@@ -209,4 +208,43 @@
             }
         }
     }
+}
+
+@media screen and (min-width:280px)and (max-width:860px) {
+    .Login {
+        .LoginContainer {
+            width: 95%;
+        }
+    }
+
+}
+@media screen and (min-width:280px)and (max-width:400px) {
+    .Login {
+        .LoginContainer {
+            .LoginContainerSocial{
+                a{
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+
+}
+@media screen and (min-width:860px)and (max-width:1400px) {
+    .Login {
+        width: 100%;
+        .LoginContainer {
+            width: 45%;
+        }
+    }
+
+}
+@media screen and (min-width:1400px)and (max-width:2200px) {
+    .Login {
+        width: 100%;
+        .LoginContainer {
+            width: 30%;
+        }
+    }
+
 }

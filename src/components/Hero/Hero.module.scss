@@ -12,6 +12,7 @@
     background: url('../../about/header@2x.2a94df31\ \(1\).png');
     background-position: center;
     background-size: cover;
+    margin-bottom: 35px;
 
     .heroContainer {
         display: flex;
@@ -57,6 +58,7 @@
                 color: #fff;
                 width: 600px;
                 margin-bottom: 15px;
+                margin-top: 19px;
             }
         }
     }
@@ -65,7 +67,35 @@
         width: 100%;
         height: auto;
         position: absolute;
-        bottom: -1px;
+        bottom: -3px;
         left: 0;
+    }
+}
+
+
+@media screen and (min-width:280px)and (max-width:860px) {
+    .hero {
+        width: 100%;
+        min-height: 50vh;
+        background-position: right 30% center;
+
+        .heroContainer {
+            width: 98%;
+
+            .heroContainerText {
+                width: 90%;
+
+                .bigTitle {
+                    width: 80%;
+                    font-size: 38px;
+                }
+
+                .desc,
+                a {
+                    display: none;
+                }
+
+            }
+        }
     }
 }

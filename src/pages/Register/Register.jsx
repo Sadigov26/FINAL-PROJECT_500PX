@@ -20,7 +20,7 @@ const Register = () => {
     };
 
     return (
-        <div style={{ width: "100%", gap: "80px", minHeight: "100vh", display: "flex", flexDirection: "column", backgroundColor: "#F7F8FA" }}>
+        <div style={{ width: "100%", gap: "120px", minHeight: "100vh", display: "flex", flexDirection: "column", backgroundColor: "#F7F8FA" }}>
             <Header />
             <div className={styles.Login}>
                 <div className={styles.LoginContainer}>

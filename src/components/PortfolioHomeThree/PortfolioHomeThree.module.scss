@@ -1,4 +1,4 @@
-.PortfolioHomeThree { 
+.PortfolioHomeThree {
     background-image: url("../../about/banner_licensing_desktop@2x.440dbd64.png");
     min-height: 56vh;
     display: flex;
@@ -11,7 +11,7 @@
     background-position: center;
     gap: 30px;
 
-    .portofiloIconThree { 
+    .portofiloIconThree {
         font-size: 55px;
         padding: 20px;
         border-radius: 100px;
@@ -26,14 +26,14 @@
     }
 }
 
-.photographersHomeThree { 
+.photographersHomeThree {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     padding-top: 40px;
 
-    .photographersHomeContainerThree { 
+    .photographersHomeContainerThree {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -41,13 +41,14 @@
         gap: 30px;
         width: 80%;
 
-        .photographersHomeContainerThreeDesk { 
+        .photographersHomeContainerThreeDesk {
             display: flex;
             gap: 15px;
             flex-direction: column;
             align-items: start;
             text-align: start;
             width: 100%;
+
             h3 {
                 font-size: 40px;
                 font-weight: 700;
@@ -68,7 +69,7 @@
             }
         }
 
-        .ImagePhThree { 
+        .ImagePhThree {
             width: 100%;
 
             img {
@@ -76,4 +77,19 @@
             }
         }
     }
+}
+
+@media screen and (min-width:280px)and (max-width:860px) {
+    .photographersHomeThree {
+        .photographersHomeContainerThree {
+            width: 90%;
+            flex-direction: column;
+
+            button {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+    }
+
 }

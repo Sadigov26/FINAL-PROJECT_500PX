@@ -14,7 +14,7 @@ const Footer = () => {
                 <div className={styles.FooterContainerLarge}>
                     <div className={styles.FooterContainer}>
                         <div className={styles.FooterContainerTop}>
-                            <div style={{ display: "flex" }}>
+                            <div style={{ display: "flex" }} className={styles.NavContainer}>
                                 <div className={styles.FooterNavbar}>
                                     <h3>Company</h3>
                                     <ul>
@@ -32,7 +32,7 @@ const Footer = () => {
                                         <li><a href="#">Portfolio</a></li>
                                     </ul>
                                 </div>
-                                <div className={styles.FooterNavbar}>
+                                <div className={styles.FooterNavbarLic}>
                                     <h3>Licensing</h3>
                                     <ul>
                                         <li><a href="/licensing">About Licensing</a></li>

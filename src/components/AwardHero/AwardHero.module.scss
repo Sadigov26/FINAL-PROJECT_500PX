@@ -68,8 +68,8 @@
             gap: 10px;
 
             img {
-                width: 280px;
-                height: 300px;
+                width: 230px;
+                height: 250px;
             }
         }
     }
@@ -93,6 +93,7 @@
             align-items: center;
             justify-content: center;
             gap: 20px;
+            flex-wrap: wrap;
 
             .CategoryBtns {
                 display: flex;
@@ -133,10 +134,10 @@
             width: 80%;
 
             .PhotographersoftheYearBotomDesk {
-                width: 20%;
                 display: flex;
                 flex-direction: column;
                 gap: 20px;
+                width: 100%;
 
                 h1 {
                     color: white;
@@ -158,12 +159,14 @@
                     width: 40px;
                     text-align: center;
                 }
-                p{
+
+                p {
                     color: white;
                     font-size: 16px;
                     letter-spacing: 2px;
                 }
-                button{
+
+                button {
                     width: 80%;
                     border-radius: 100px;
                     padding: 15px 22px;
@@ -175,12 +178,37 @@
             }
 
             .PhotographersoftheYearBotomImg {
-                width: 40%;
+                width: 100%;
 
                 img {
                     width: 100%;
                 }
             }
+        }
+    }
+}
+
+@media screen and (min-width:280px)and (max-width:860px) {
+    .AwardHero {
+        .AwardHeroContainer {
+            flex-direction: column;
+
+            .AwardHeroContainerTop {
+                svg {
+                    width: 100%;
+                }
+            }
+
+            .AwardHeroContainerRight {
+                >div {
+                    display: none;
+                }
+            }
+        }
+
+        .PhotographersoftheYearBotom {
+            flex-direction: column;
+            width: 100%;
         }
     }
 }

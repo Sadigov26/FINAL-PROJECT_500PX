@@ -5,11 +5,18 @@ import appstore from '../../about/image copy.png'
 import apps from '../../about/devices_desktop@2x.b629f971.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router-dom'
 
 const Looking = () => {
+    const navigation = useNavigate()
+
     return (
         <div>
             <div className={styles.looking}>
+                <div className={styles.signUpHome}>
+                    <p>Get inspired with incredible photos from diverse styles and genres around the world. We're not guided by fads—just great photography.</p>
+                    <button onClick={() => navigation("/signup")}>Sign up</button>
+                </div>
                 <div className={styles.lookingContainer}>
                     <div className={styles.inspiration}>
                         <div className={styles.inspirationDesc}>
@@ -97,7 +104,7 @@ const Looking = () => {
                             <div className={styles.getTheAppLeftDesk}>
                                 <h1>Get the app</h1>
                                 <p>Join our community of over 16 million like-minded photographers. Download the 500px app for Android and iOS today!</p>
-                            </div> 
+                            </div>
                             <div className={styles.getTheAppStore}>
                                 <a href="https://apps.apple.com/us/app/500px-photo-sharing-community/id471965292"><img src={appstore} alt="" /></a>
                                 <a href="https://play.google.com/store/apps/details?id=com.fivehundredpx.viewer"><img src={playmarket} alt="" /></a>

@@ -25,7 +25,7 @@ const Banner = () => {
                                 <img src={img1} alt="" />
                                 <p className={styles.BannerImageDrop}>Photo by Hayden Scott</p>
                             </div>
-                            <div className={styles.imageBanner}>
+                            <div className={styles.imageBannerTwo}>
                                 <img src={img2} alt="" />
                                 <p className={styles.BannerImageDrop}>Photo by Hayden Scott</p>
                             </div>
@@ -33,15 +33,16 @@ const Banner = () => {
                                 <img src={img3} alt="" />
                                 <p className={styles.BannerImageDrop}>Photo by Hayden Scott</p>
                             </div>
-                            <div className={styles.imageBanner}>
+                            <div className={styles.imageBannerTwo}>
                                 <img src={img4} alt="" />
                                 <p className={styles.BannerImageDrop}>Photo by Hayden Scott</p>
                             </div>
-                            <div className={styles.imageBanner}>
+
+                            <div className={styles.imageBannerTwo}>
                                 <img src={img5} alt="" />
                                 <p className={styles.BannerImageDrop}>Photo by Hayden Scott</p>
                             </div>
-                            <div className={styles.imageBanner}>
+                            <div className={styles.imageBannerTwo}>
                                 <img src={img6} alt="" />
                                 <p className={styles.BannerImageDrop}>Photo by Hayden Scott</p>
                             </div>

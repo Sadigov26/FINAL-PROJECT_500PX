@@ -1,5 +1,3 @@
-
-
 .ComparePlans {
     display: flex;
     justify-content: center;
@@ -7,7 +5,7 @@
     background-color: #F7F8FA;
     padding-top: 40px;
     flex-direction: column;
-    
+
     .ComparePlansContainer {
         width: 85%;
         display: flex;
@@ -94,7 +92,7 @@
             justify-content: center;
             align-items: start;
             gap: 20px;
-            width: 50%;
+            width: 80%;
 
             .ComparePlansOne,
             .ComparePlansTwo {
@@ -154,7 +152,7 @@
 
                 }
 
-                .ComparePlansTwoBottom  {
+                .ComparePlansTwoBottom {
                     margin-top: 20px;
                     display: flex;
                     min-height: 70vh;
@@ -251,12 +249,11 @@
             padding: 10px;
             align-items: center;
             justify-content: center;
-            width: 30%;
             flex-direction: column;
-            gap: 1 0px;
+            gap: 10px;
 
             .FeaturePlansContainerTop {
-                width: 100%;
+                width: 60%;
                 display: flex;
                 align-items: start;
 
@@ -298,4 +295,21 @@
             }
         }
     }
+}
+
+@media screen and (min-width:280px)and (max-width:860px) {
+    .ComparePlans {
+        .FeaturePlansContainer{
+            width: 95%;
+        }
+        .ComparePlansContainerBottom {
+            flex-direction: column;
+
+            .ComparePlansOne {
+                width: 100%;
+            }
+        }
+    }
+
+
 }

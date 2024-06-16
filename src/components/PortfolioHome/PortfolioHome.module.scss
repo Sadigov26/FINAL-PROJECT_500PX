@@ -67,3 +67,16 @@
         }
     }
 }
+
+@media screen and (min-width:280px)and (max-width:860px) {
+    .photographersHome {
+        .photographersHomeContainer {
+            width: 90%;
+
+            button {
+                width: 100%;
+            }
+        }
+    }
+
+}

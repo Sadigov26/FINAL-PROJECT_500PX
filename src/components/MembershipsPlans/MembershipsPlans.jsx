@@ -16,9 +16,21 @@ import { faFilePen } from '@fortawesome/free-solid-svg-icons';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
 const MembershipsPlans = () => {
+    const scrollToPlans = () => {
+        const plansSection = document.getElementById('compare-plans');
+        if (plansSection) {
+            plansSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
         <div>
             <div className={styles.MembershipsPlans}>
+                <div className={styles.contentDesk}>
+                    <h1>Unlock <span>20% Off</span> & Transform Your Photography</h1>
+                    <p>Get unlimited uploads, uncompressed storage, and insights that matter. Elevate your photography and connect with a global audience.</p>
+                    <button className={styles.buttonau} onClick={scrollToPlans}>Upgrade now</button>
+                </div>
                 <div className={styles.MembershipsPlansContainer}>
                     <div className={styles.MembershipsPlansContainerTitle}>
                         <h1>What you get</h1>

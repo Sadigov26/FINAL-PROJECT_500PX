@@ -6,6 +6,7 @@
 }
 
 header {
+    flex-direction: column;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -13,6 +14,16 @@ header {
     position: fixed;
     z-index: 111;
     background-color: white;
+    .headBottom {
+        background-color: #c4c4c4;
+        width: 100%;
+        display: none;
+        align-items: center;
+        justify-content: space-between;
+        height: 35px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 
     .containerHeader {
         display: flex;
@@ -28,13 +39,18 @@ header {
 
             .title {
                 width: 110px;
-                
+
             }
 
             .containerHeaderNavbar {
                 ul {
                     display: flex;
-                    gap: 30px;
+                    align-items: center;
+                    gap: 20px;
+
+                    .aaaa {
+                        display: none;
+                    }
 
                     li {
                         list-style: none;
@@ -50,7 +66,8 @@ header {
                                 color: rgb(41, 134, 247);
                                 transition: 0.3s;
                             }
-                            &:active{
+
+                            &:active {
                                 color: rgb(41, 134, 247);
                                 transition: 0.3s;
                             }
@@ -70,7 +87,7 @@ header {
 
                     a {
                         font-size: 17px;
-                        
+
                     }
                 }
             }
@@ -89,9 +106,11 @@ header {
                 gap: 3px;
 
                 input {
+                    width: 100%;
                     height: 34px;
                     border: none;
                     outline: none;
+                    resize: vertical;
                 }
 
                 .new {
@@ -108,11 +127,85 @@ header {
             .containerHeaderUser {
                 display: flex;
                 gap: 20px;
+                align-items: center;
+
+                .bars {
+                    font-size: 17px;
+                    position: relative;
+
+                }
+
+                body {
+                    font-family: 'Lato', sans-serif;
+                }
+
+                .containerHeaderUser {
+                    position: relative;
+                    padding: 20px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+
+                .bars {
+                    font-size: 30px;
+                    cursor: pointer;
+                    z-index: 1111;
+                    display: none;
+                }
+
+                .btnUsr {
+                    padding: 10px 20px;
+                    margin: 0 10px;
+                    text-decoration: none;
+                    color: white;
+                    background-color: #007bff;
+                    border-radius: 4px;
+                }
+
+                .MenuBars {
+                    height: 1000px;
+
+                    li {
+                        list-style: none;
+                    }
+
+                    border: 1px solid rgba(128, 128, 128, 0.315);
+                    position: absolute;
+                    top: 10px;
+                    padding: 16px;
+                    gap: 20px;
+                    right: 10px;
+                    border-radius: 18px;
+                    background: #efeded;
+                    box-shadow: 20px 20px 60px #c4c4c4,
+                    -20px -20px 60px #ffffff;
+                    width: 280px;
+
+                    z-index: 1000;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: start;
+                }
+
+                .MenuBars a {
+                    text-decoration: none;
+                    color: black;
+                    padding: 10px 20px;
+                    width: 100%;
+                    transition: background-color 0.3s;
+                }
+
+                .MenuBars a:hover {
+                    background-color: #f1f1f1;
+                }
+
 
                 .btnUsr {
                     border: 3px solid black;
                     background-color: transparent;
-                    font-size: 20px;
+                    font-size: 17px;
+                    text-align: center;
                     padding: 6px 10px;
                     font-weight: bold;
                     border-radius: 100px;
@@ -131,3 +224,87 @@ header {
     }
 }
 
+@media screen and (min-width:860px)and (max-width:1200px) {
+    header {
+        .resDrop {
+            display: none;
+
+        }
+
+        .containerHeader {
+            .containerHeaderLeft {
+                margin-right: 10px;
+
+                .containerHeaderNavbar {
+                    ul {
+                        gap: 20px;
+
+                        .aaaa {
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width:280px)and (max-width:860px) {
+    header {
+        width: 100%;
+
+        .headBottom {
+            display: block;
+            justify-content: space-between;
+            display: flex;
+            align-items: center;
+        }
+
+        .resDrop {
+            display: none;
+
+        }
+
+        .containerHeader {
+            display: flex;
+            justify-content: space-between;
+            width: 94%;
+            gap: 20px;
+
+            .containerHeaderLeft {
+
+
+                .containerHeaderNavbar {
+                    display: none;
+                }
+            }
+
+            .containerHeaderRight {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: end;
+                gap: 10px;
+
+                .containerHeaderSearch {
+                    width: 100%;
+
+                    input {
+                        resize: vertical;
+                    }
+                }
+
+                .containerHeaderUser {
+                    .bars {
+                        display: block;
+                    }
+
+                    .btnUsr {
+                        display: none;
+                    }
+                }
+            }
+
+        }
+    }
+}

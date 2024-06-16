@@ -55,7 +55,8 @@
                 width: 80%;
                 gap: 15px;
 
-                .imageBanner {
+                .imageBanner,
+                .imageBannerTwo {
                     position: relative;
                     width: auto;
                     height: 330px;
@@ -86,4 +87,37 @@
             }
         }
     }
+}
+
+@media screen and (min-width:280px)and (max-width:860px) {
+    .Banner {
+        .BannerContainer {
+            .BannerContainerTop {
+                text-align: center;
+                width: 90%;
+            }
+
+            .BannerContainerBottom {
+                margin-bottom: 20px;
+                .BannerContainerBottomImg {
+                    .imageBanner {
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        flex-direction: column;
+
+                        img {
+                            width: 100%;
+                        }
+                    }
+
+                    .imageBannerTwo {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
 }

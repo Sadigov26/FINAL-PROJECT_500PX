@@ -3,12 +3,22 @@ import styles from './Header.module.scss';
 import Modal from '../Modal/Modal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { TbAntennaBars1 } from 'react-icons/tb';
+import { FaBars, FaRegCompass } from 'react-icons/fa6';
+import { FaRegUserCircle } from 'react-icons/fa';
+import { BsRocketTakeoffFill } from 'react-icons/bs';
 
 const Header = () => {
   const [isModalOpen, setModalOpen] = useState(false);
+  const [isMenuOpenn, setIsMenuOpenn] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  
-
+  const [isMenuOpenBars, setIsMenuOpenBars] = useState(false);
+  const toggleMenuu = () => {
+    setIsMenuOpenn(!isMenuOpenn);
+  };
+  const toggleMenuBars = () => {
+    setIsMenuOpenBars(!isMenuOpenBars);
+  };
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -34,7 +44,7 @@ const Header = () => {
               </div>
             </div>
             <div className={styles.containerHeaderNavbar}>
-              <ul>
+              <ul >
                 <li><a href="#">Discover</a></li>
                 <li><a onClick={toggleMenu} style={{ display: "flex", alignItems: "center", cursor: "pointer" }}>Licensing
                   <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -54,10 +64,23 @@ const Header = () => {
                     </ul>
                   )}
                 </li>
-                <li><a href="/upgrade" >Memberships</a></li>
-                <li><a href="/quests">Quests</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="/awards_winners_2023">Award Winners</a></li>
+                <div className={styles.aaaa} >
+                  <li><a onClick={toggleMenuu} style={{ display: "flex", alignItems: "center", cursor: "pointer" }}><TbAntennaBars1 style={{ color: "black", fontSize: "28px" }} />
+                  </a>
+                    {isMenuOpenn && (
+                      <ul className={styles.licensing}>
+                        <li><a href="/upgrade" >Memberships</a></li>
+                        <li><a href="/quests">Quests</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="/awards_winners_2023">Award Winners</a></li>
+                      </ul>
+                    )}
+                  </li>
+                </div>
+                <li className={styles.resDrop}><a href="/upgrade" >Memberships</a></li>
+                <li className={styles.resDrop}><a href="/quests">Quests</a></li>
+                <li className={styles.resDrop}><a href="#">Blog</a></li>
+                <li className={styles.resDrop}><a href="/awards_winners_2023">Award Winners</a></li>
               </ul>
             </div>
           </div>
@@ -85,9 +108,31 @@ const Header = () => {
             <div className={styles.containerHeaderUser}>
               <a href='/login' className={styles.btnUsr} style={{ border: "none" }}>Log in</a>
               <a href='/register' className={styles.btnUsr} > Sign up</a>
+              <FaBars onClick={toggleMenuBars} className={styles.bars}
+              />
+              {isMenuOpenBars && (
+                <ul className={styles.MenuBars}>
+                  <li><a href="#">Discover</a></li>
+                  <li><a href='/licensing'>Licensing</a></li>
+                  <li ><a href="/upgrade" >Memberships</a></li>
+                  <li ><a href="/quests">Quests</a></li>
+                  <li ><a href="#">Blog</a></li>
+                  <li ><a href="/awards_winners_2023">Award Winners</a></li>
+                  <li style={{ display: "flex", paddingTop: "15px", alignItems: "center" }}>
+                    <a style={{ padding: "0px", width: "60px" }} href='/login' >Log in</a>
+                    <a style={{ padding: "0px", width: "100px" }} href='/register' > Sign up</a>
+                  </li>
+
+                </ul>
+              )}
             </div>
           </div>
 
+        </div>
+        <div className={styles.headBottom}>
+          <a style={{ color: "black", fontSize: "19px" }} href="/discover"><FaRegCompass /></a>
+          <a style={{ color: "black", fontSize: "19px" }} href="/quests"><BsRocketTakeoffFill /></a>
+          <a style={{ color: "black", fontSize: "19px" }} href="/login"><FaRegUserCircle /></a>
         </div>
       </header>
     </div>

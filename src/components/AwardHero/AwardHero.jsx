@@ -11,7 +11,7 @@ import { TfiCup } from "react-icons/tfi";
 
 const AwardHero = () => {
     return (
-        <div>
+        <div >
             <div className={styles.AwardHero}>
                 <div className={styles.AwardHeroContainer}>
                     <div className={styles.AwardHeroContainerLeft}>
@@ -36,16 +36,15 @@ const AwardHero = () => {
                     </div>
                     <div className={styles.AwardHeroContainerRight}>
                         <img src={globalphotoaward1} alt="" />
-                        <div style={{ width: "280px", height: "300px", backgroundColor: "#7EB29F" }}></div>
+                        <div style={{ width: "230px", height: "250px", backgroundColor: "#7EB29F" }}></div>
                         <img src={globalphotoaward2} alt="" />
-                        <div style={{ width: "280px", height: "300px", backgroundColor: "#C37088" }}></div>
+                        <div style={{ width: "230px", height: "250px", backgroundColor: "#C37088" }}></div>
                         <img src={globalphotoaward3} alt="" />
-                        <div style={{ width: "280px", height: "300px", backgroundColor: "#FF9900" }}></div>
+                        <div style={{ width: "230px", height: "250px", backgroundColor: "#FF9900" }}></div>
                         <img src={globalphotoaward4} alt="" />
-                        <div style={{ width: "280px", height: "300px", backgroundColor: "#6F9EDC" }}></div>
+                        <div style={{ width: "230px", height: "250px", backgroundColor: "#6F9EDC" }}></div>
                         <img src={globalphotoaward5} alt="" />
                     </div>
-
                 </div>
                 <div className={styles.CategoryWinners}>
                     <h1>Category Winners</h1>
@@ -71,7 +70,6 @@ const AwardHero = () => {
 
                     </div>
                 </div>
-
                 <div className={styles.PhotographersoftheYear}>
                     <div className={styles.PhotographersoftheYearTop}>
                         <h1 style={{ display: "flex", alignItems: "center", gap: "10px" }}><TfiCup style={{ color: "#FF9900" }} /> 500px Photographers of the Year</h1>
