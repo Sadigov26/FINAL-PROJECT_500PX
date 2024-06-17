@@ -7,12 +7,15 @@ import { TbAntennaBars1 } from 'react-icons/tb';
 import { FaBars, FaRegCompass } from 'react-icons/fa6';
 import { FaRegUserCircle } from 'react-icons/fa';
 import { BsRocketTakeoffFill } from 'react-icons/bs';
+import { useNavigate } from 'react-router-dom';
 
-const Header = () => {
+const Header = ({ hideSearch }) => {
   const [isModalOpen, setModalOpen] = useState(false);
   const [isMenuOpenn, setIsMenuOpenn] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMenuOpenBars, setIsMenuOpenBars] = useState(false);
+  const [query, setQuery] = useState('');
+  const navigate = useNavigate();
   const toggleMenuu = () => {
     setIsMenuOpenn(!isMenuOpenn);
   };
@@ -24,7 +27,17 @@ const Header = () => {
   };
   const openModal = () => setModalOpen(true);
   const closeModal = () => setModalOpen(false);
+  const handleSearch = () => {
+    if (query.trim()) {
+      navigate(`/search?query=${encodeURIComponent(query)}`);
+    }
+  };
 
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      handleSearch();
+    }
+  };
 
   return (
     <div>
@@ -85,9 +98,19 @@ const Header = () => {
             </div>
           </div>
           <div className={styles.containerHeaderRight}>
-            <div className={styles.containerHeaderSearch}>
-              <input type="text" placeholder='Search powered by AI' name="" id="" />
-              <FontAwesomeIcon icon={faMagnifyingGlass} style={{ fontSize: "23px" }} />
+            <div className={styles.containerHeaderSearch} style={{ display: hideSearch ? 'none' : 'flex' }}>
+              <input
+                type="text"
+                placeholder="Search powered by AI"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                onKeyPress={handleKeyPress}
+              />
+              <FontAwesomeIcon
+                icon={faMagnifyingGlass}
+                style={{ fontSize: '23px', cursor: 'pointer' }}
+                onClick={handleSearch}
+              />
               <div onClick={openModal} className={styles.new}>
                 <svg width="33" height="16" viewBox="0 0 26 15">
                   <path

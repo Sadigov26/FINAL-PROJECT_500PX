@@ -82,6 +82,10 @@ header {
                     position: absolute;
                     background-color: rgb(255, 255, 255);
                     padding: 15px;
+                    display: flex;
+                    align-items: start;
+                    justify-content: center;
+                    flex-direction: column;
                     width: 260px;
                     transition: max-height 0.5s ease;
 

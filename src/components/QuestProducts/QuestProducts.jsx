@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './QuestProducts.module.scss';
 import { IoRocket } from 'react-icons/io5';
 import deneme from '../../about/Commercial_Grants_Header.16bd69fc.png';
@@ -7,6 +7,24 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrophy } from '@fortawesome/free-solid-svg-icons/faTrophy';
 
 const QuestProducts = () => {
+    const [communityImages, setCommunityImages] = useState([]);
+    const apiKey = "636e1481b4f3c446d26b8eb6ebfe7127"; // Flickr API key
+
+    useEffect(() => {
+        const apiUrl = `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=Community&format=json&nojsoncallback=1`;
+
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                if (data.photos && data.photos.photo) {
+                    setCommunityImages(data.photos.photo);
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching community images:', error);
+            });
+    }, []);
+
     return (
         <div className={styles.QuestProducts}>
             <div className={styles.QuestProductsContainer}>
@@ -23,10 +41,16 @@ const QuestProducts = () => {
                 <div className={styles.QuestProductsContainerBottom}>
                     <div className={styles.QuestProductsBottom}>
                         <div className={styles.QuestProductsCards}>
-                            <div className={styles.imageContainer}>
-                                <img src={deneme} alt="" />
-                                <h3 className={styles.cardPrice}><FontAwesomeIcon icon={faTrophy} />5 manat</h3>
-                            </div>
+                            {communityImages.length > 0 ? (
+                                communityImages.map(image => (
+                                    <div className={styles.imageContainer} key={image.id}>
+                                        <img src={`https://farm${image.farm}.staticflickr.com/${image.server}/${image.id}_${image.secret}_m.jpg`} alt={image.title} />
+                                        <h3 className={styles.cardPrice}><FontAwesomeIcon icon={faTrophy} />5 manat</h3>
+                                    </div>
+                                ))
+                            ) : (
+                                <p>Loading community images...</p>
+                            )}
                             <div className={styles.cardDescription}>
                                 <div className={styles.iconText}>
                                     <div className={styles.iconCircle}>

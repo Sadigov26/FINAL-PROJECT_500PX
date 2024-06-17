@@ -17,6 +17,8 @@ import Login from '../pages/Login/Login'
 import Register from '../pages/Register/Register'
 import Recover from '../pages/Recover/Recover'
 import Signup from '../pages/Signup/Signup'
+import Search from '../pages/Search/Search'
+import Discover from '../pages/Discover/Discover'
 
 const Router = () => {
   return (
@@ -41,6 +43,8 @@ const Router = () => {
           <Route path='/register' element={<Register />} />
           <Route path='/recover' element={<Recover />} />
           <Route path='/signup' element={<Signup />} />
+          <Route path='/search' element={<Search />} />
+          <Route path='/discover' element={<Discover />} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -10,7 +10,7 @@ const Hero = () => {
                         <span className={styles.bigTitle}>Discover and share the world`s best photos</span>
                         <span className={styles.desc}>Get inspired with incredible photos from diverse styles and genres around the
                             world. We're not guided by fads—just great photography.</span>
-                        <a href="#">Sign up</a>
+                        <a href="/register">Sign up</a>
                     </div>
                 </div>
                 <svg className={styles.svgwavestop} xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 128'>
