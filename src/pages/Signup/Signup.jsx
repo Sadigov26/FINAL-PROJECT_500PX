@@ -7,7 +7,7 @@ import { useRegisterMutation } from "../../redux/slices/usersApiSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { setCredentials } from "../../redux/slices/authSlice";
 import { toast } from "react-toastify";
-import 'react-toastify/ReactToastify.css';
+
 const Signup = () => {
 
     const [name, setName] = useState('');
