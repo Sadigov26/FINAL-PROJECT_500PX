@@ -5,13 +5,13 @@ import { CiCalendar } from 'react-icons/ci';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrophy } from '@fortawesome/free-solid-svg-icons/faTrophy';
 
-const QuestProducts = () => {
+const QuestProductsLicensing = () => {
     const apiKey = '636e1481b4f3c446d26b8eb6ebfe7127';
     const [images, setImages] = useState([]);
 
     useEffect(() => {
-        const query = 'Community';
-        const apiUrl = `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${query}&per_page=5&format=json&nojsoncallback=1`;
+        const query = 'travel'; 
+        const apiUrl = `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${query}&per_page=7&format=json&nojsoncallback=1`;
 
         fetch(apiUrl)
             .then((response) => response.json())
@@ -34,8 +34,8 @@ const QuestProducts = () => {
                     <h1><IoRocket style={{ color: "#0870D1" }} /> Quest categories</h1>
                     <div className={styles.QuestProductsNavbar}>
                         <ul>
-                            <li><a href="/quests" style={{ borderBottom: "3px solid #2986F7", fontWeight: "700" }}>Community</a></li>
-                            <li><a href="/quests/licensing">Licensing</a></li>
+                            <li><a href="/quests" >Community</a></li>
+                            <li><a href="/quests/licensing" style={{ borderBottom: "3px solid #2986F7", fontWeight: "700" }}>Licensing</a></li>
                             <li><a href="/quests/archive">Archive</a></li>
                         </ul>
                     </div>
@@ -69,4 +69,4 @@ const QuestProducts = () => {
     );
 }
 
-export default QuestProducts;
+export default QuestProductsLicensing;

@@ -1,36 +1,50 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import styles from '../Login/Login.module.scss';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
-
+import { useNavigate } from 'react-router-dom';
+import { useRegisterMutation } from "../../redux/slices/usersApiSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { setCredentials } from "../../redux/slices/authSlice";
+import { toast } from "react-toastify";
+import 'react-toastify/ReactToastify.css';
 const Signup = () => {
-    const [formData, setFormData] = useState({
-        email: '',
-        username: '',
-        password: ''
-    });
 
-    const [error, setError] = useState('');
-    const [success, setSuccess] = useState('');
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
 
-    const { email, username, password } = formData;
+    const navigation = useNavigate();
+    const dispatch = useDispatch();
 
-    const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
+    const [register, { isLoading }] = useRegisterMutation();
 
-    const onSubmit = async e => {
-        e.preventDefault();
-        try {
-            const res = await axios.post('http://localhost:8000/api/auth/register', { username, email, password });
-            setSuccess('Registration successful');
-            setError('');
-            console.log(res.data); // Token or success message
-        } catch (err) {
-            setError('Registration failed');
-            setSuccess('');
-            console.error(err.response.data);
+    const { userInfo } = useSelector(state => state.auth);
+
+    useEffect(() => {
+        if (userInfo) {
+            navigation('/dashboard');
         }
-    };
+    }, [navigation, userInfo]);
+
+
+
+    const handleRegister = async (e) => {
+        e.preventDefault();
+        if (password !== confirmPassword) {
+            toast.error('Sifreler duz deyil');
+            return;
+        }
+        try {
+            const res = await register({ name, email, password }).unwrap();
+            dispatch(setCredentials({ ...res }));
+            navigation('/dashboard');
+        } catch (error) {
+            toast.error('Register fail');
+        }
+    }
+
 
     return (
         <div style={{ width: "100%", gap: "80px", minHeight: "100vh", display: "flex", flexDirection: "column", backgroundColor: "#F7F8FA" }}>
@@ -45,25 +59,52 @@ const Signup = () => {
                         <span>or</span>
                         <div style={{ width: '40%', height: "2px", backgroundColor: "gray" }}></div>
                     </div>
-                    <form onSubmit={onSubmit} className={styles.LoginContainerInput}>
+                    <form onSubmit={handleRegister} className={styles.LoginContainerInput}>
                         <div className={styles.EmailorUsername}>
                             <label htmlFor="email"><span>Email*</span></label>
-                            <input type="email" name="email" value={email} onChange={onChange} required />
+                            <input
+                                type="text"
+                                name="email"
+                                placeholder="Email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                            />
                         </div>
                         <div className={styles.EmailorUsername}>
                             <label htmlFor="username"><span>Username*</span></label>
-                            <input type="text" name="username" value={username} onChange={onChange} required />
+                            <input
+                                type="text"
+                                name="name"
+                                placeholder="Name"
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                            />
                         </div>
                         <div className={styles.EmailorUsername}>
                             <label htmlFor="password"><span>Password*</span></label>
-                            <input type="password" name="password" value={password} onChange={onChange} placeholder="(minimum 8 characters)" required />
+                            <input
+                                type="password"
+                                name="password"
+                                placeholder="Password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                            />
+                            <input
+                                type="password"
+                                name="confirmPassword"
+                                placeholder="Confirm Password"
+                                value={confirmPassword}
+                                onChange={(e) => setConfirmPassword(e.target.value)}
+                            />
                         </div>
                         <div className={styles.EmailorUsername}>
-                            <button type='submit'>Sign up</button>
+                            <button type="submit" disabled={isLoading}>
+                                {isLoading ? 'User creating' : 'Register'}
+                            </button>
                         </div>
                     </form>
-                    {error && <div className={styles.error} style={{ color: "red" }}>{error}</div>}
-                    {success && <div className={styles.success} style={{ color: "#0056a7" }}>{success}</div>}
+
+
                     <div className={styles.LoginContainerInput}>
                         <div className={styles.LoginContainerSignup}>
                             <p>Already have an account? <a href="/login">Log in</a></p>
@@ -73,7 +114,7 @@ const Signup = () => {
             </div>
             <Footer />
         </div>
-    )
-}
+    );
+};
 
 export default Signup;

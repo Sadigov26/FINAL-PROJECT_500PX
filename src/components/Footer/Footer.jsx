@@ -18,18 +18,18 @@ const Footer = () => {
                                 <div className={styles.FooterNavbar}>
                                     <h3>Company</h3>
                                     <ul>
-                                        <li><a href="#">Newsroom</a></li>
-                                        <li><a href="#">About us</a></li>
-                                        <li><a href="#">Careers</a></li>
+                                        <li><a href="/licensing/licensing">Newsroom</a></li>
+                                        <li><a href="/licensing/contribute">About us</a></li>
+                                        <li><a href="/licensing/requirements">Careers</a></li>
                                     </ul>
                                 </div>
                                 <div className={styles.FooterNavbar}>
                                     <h3>By community</h3>
                                     <ul>
-                                        <li><a href="#">Popular photos</a></li>
-                                        <li><a href="#">Editors' Choice</a></li>
-                                        <li><a href="#">Quests</a></li>
-                                        <li><a href="#">Portfolio</a></li>
+                                        <li><a href="/discover">Popular photos</a></li>
+                                        <li><a href="/discover">Editors' Choice</a></li>
+                                        <li><a href="/discover">Quests</a></li>
+                                        <li><a href="/discover">Portfolio</a></li>
                                     </ul>
                                 </div>
                                 <div className={styles.FooterNavbarLic}>

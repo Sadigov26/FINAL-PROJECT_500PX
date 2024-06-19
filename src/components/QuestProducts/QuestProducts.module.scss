@@ -72,31 +72,30 @@
             .QuestProductsBottom {
                 display: flex;
                 align-items: center;
-                justify-content: start;
+                justify-content: center;
                 gap: 15px;
                 flex-wrap: wrap;
                 width: 100%;
 
                 .QuestProductsCards {
-                    width: 30%;
                     display: flex;
-                    align-items: start;
-                    justify-content: start;
-                    flex-direction: column;
-                    padding: 15px;
-                    border-radius: 15px;
-                    border-radius: 15px;
-                    background: #f8f7f7;
-                    box-shadow: 11px 11px 17px #e4e3e3,
-                        -11px -11px 17px #ffffff;
-
+                    flex-wrap: wrap;
+                    gap: 20px;
+                    padding-bottom: 20px;
+                    justify-content: center;
+                    
                     .imageContainer {
                         position: relative;
-                        width: 100%;
+                        overflow: hidden;
+                        border-radius: 10px;
+                        background-color: rgb(229, 227, 227);
+                        padding: 10px;
 
                         img {
-                            width: 100%;
-                            height: 100%;
+                            width: 300px;
+                            height: 200px;
+                            object-fit: cover;
+                            object-position: center;
                             border-radius: 10px;
                         }
 
@@ -106,48 +105,51 @@
                             justify-content: center;
                             gap: 10px;
                             padding: 12px 20px;
-                            background-color: #20E6C3;
+                            background-color: #20e6c3;
                             border-radius: 10px;
                             position: absolute;
-                            bottom: 14px;
-                            margin-left: 14px
+                            top: 150px;
+                            left: 24px;
+                            color: rgb(4, 4, 4);
+                            font-weight: bold;
                         }
-                    }
 
-                    .cardDescription {
-                        padding: 10px;
+                        .cardDescription {
+                            padding: 10px;
+                            text-align: start;
 
-                        .iconText {
-                            display: flex;
-                            align-items: center;
-                            gap: 10px;
-
-                            .iconCircle {
+                            .iconText {
                                 display: flex;
                                 align-items: center;
-                                justify-content: center;
-                                width: 25px;
-                                height: 25px;
-                                border-radius: 100px;
-                                background-color: black;
+                                gap: 10px;
 
-                                svg {
-                                    fill: white;
+                                .iconCircle {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    width: 25px;
+                                    height: 25px;
+                                    border-radius: 50%;
+                                    background-color: black;
+
+                                    svg {
+                                        fill: white;
+                                    }
                                 }
                             }
-                        }
 
-                        h3 {
-                            margin: 10px 0;
-                        }
+                            h3 {
+                                margin: 10px 0;
+                            }
 
-                        .iconText {
-                            display: flex;
-                            align-items: center;
-                            gap: 10px;
+                            .iconText {
+                                display: flex;
+                                align-items: center;
+                                gap: 10px;
 
-                            svg {
-                                font-size: 20px;
+                                svg {
+                                    font-size: 20px;
+                                }
                             }
                         }
                     }
@@ -155,4 +157,64 @@
             }
         }
     }
+}
+
+
+.plusButton {
+    --plus_sideLength: 2.5rem;
+    --plus_topRightTriangleSideLength: 0.9rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid white;
+    width: var(--plus_sideLength);
+    height: var(--plus_sideLength);
+    background-color: #000000;
+    overflow: hidden;
+}
+
+.plusButton::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-width: 0 var(--plus_topRightTriangleSideLength) var(--plus_topRightTriangleSideLength) 0;
+    border-style: solid;
+    border-color: transparent white transparent transparent;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.2s;
+}
+
+.plusButton:hover {
+    cursor: pointer;
+}
+
+.plusButton:hover::before {
+    --plus_topRightTriangleSideLength: calc(var(--plus_sideLength) * 2);
+}
+
+.plusButton:focus-visible::before {
+    --plus_topRightTriangleSideLength: calc(var(--plus_sideLength) * 2);
+}
+
+.plusButton>.plusIcon {
+    fill: white;
+    width: calc(var(--plus_sideLength) * 0.7);
+    height: calc(var(--plus_sideLength) * 0.7);
+    z-index: 1;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.2s;
+}
+
+.plusButton:hover>.plusIcon {
+    fill: black;
+    transform: rotate(180deg);
+}
+
+.plusButton:focus-visible>.plusIcon {
+    fill: black;
+    transform: rotate(180deg);
 }
