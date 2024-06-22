@@ -15,7 +15,7 @@ const BecomeAContributor = () => {
             <div className={styles.LicensingStarting}>
                 <div className={styles.LicensingStartingContainer}>
                     <div className={styles.LicensingStartingContainerTop}>
-                        <h1>500px Licensing: Get Started</h1>
+                        <h2>500px Licensing: Get Started</h2>
                         <p>Easily license your photos for stock usage through 500px. It's quick to setup and completely optional for all membership levels.</p>
                     </div>
                     <li style={{ listStyle: "none" }}><a onClick={helpmenu} className={styles.TableContents}>Table of Contents
@@ -50,7 +50,7 @@ const BecomeAContributor = () => {
                         <div className={styles.LicensingBottomDesk}>
                             <div className={styles.LicensingBottomDesk} id='#become-a-contributor'>
                                 <div className={styles.LicensingBottomDeskSSS}>
-                                    <h1>How to contribute your photos</h1>
+                                    <h2>How to contribute your photos</h2>
                                     <p>Learn the ins and outs of how to submit your photos, the review process, and more.</p>
                                 </div>
                                 <div className={styles.LicensingBottomDeskSSS}>

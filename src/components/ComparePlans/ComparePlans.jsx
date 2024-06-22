@@ -48,7 +48,7 @@
                             <h1>Membership plans</h1>
                         </div>
                         <div className={styles.ComparePlansContainerMidle}>
-                            <h1 style={{ color: isCheckVisible ? 'black' : 'gray' }}>Yearly</h1>
+                            <h2 style={{ color: isCheckVisible ? 'black' : 'gray' }}>Yearly</h2>
                             <label className={styles.switch}>
                             <input type="checkbox" onChange={toggleCheckVisibility} checked={!isCheckVisible} />
 
@@ -59,13 +59,13 @@
                         <div className={styles.ComparePlansContainerBottom}>
                             <div className={styles.ComparePlansOne}>
                                 <div className={styles.ComparePlansOneTop}>
-                                    <h1 className={styles.firstoftype}> <FontAwesomeIcon icon={faGamepad} />Awesome</h1>
+                                    <h2 className={styles.firstoftype}> <FontAwesomeIcon icon={faGamepad} />Awesome</h2>
                                 </div>
                                 <div className={styles.ComparePlansTwoBottom}>
                                     <div className={`${styles.ComparePlansTwoBottomCheck} ${isCheckVisible ? '' : styles.hidden}`}>
                                         {isCheckVisible && <img src={off20} alt="" className={styles.off20} />}
                                         {isCheckVisible && <del>$4.99 US / mo</del>}
-                                        <h1>{priceOne}</h1>
+                                        <h2>{priceOne}</h2>
                                         <p>{annualText}</p>
                                         <h5 style={{ marginTop: "20px" }}> <FontAwesomeIcon icon={faCheck} /> Unlimited uploads</h5>
                                         <h5> <FontAwesomeIcon icon={faCheck} /> Priority customer support</h5>
@@ -86,13 +86,13 @@
                             </div>
                             <div className={styles.ComparePlansTwo}>
                                 <div className={styles.ComparePlansTwoTop}>
-                                    <h1><FontAwesomeIcon icon={faGem} />Pro</h1>
+                                    <h2><FontAwesomeIcon icon={faGem} />Pro</h2>
                                 </div>
                                 <div className={styles.ComparePlansTwoBottom}>
                                     <div className={`${styles.ComparePlansTwoBottomCheck} ${isCheckVisible ? '' : styles.hidden}`}>
                                         {isCheckVisible && <img src={off20} alt="" className={styles.off20} />}
                                         {isCheckVisible && <del>$9.99 US / mo</del>}
-                                        <h1>{priceTwo}</h1>
+                                        <h2>{priceTwo}</h2>
                                         <p>{annualText}</p>
                                         <h5 style={{ marginTop: "20px" }}> <FontAwesomeIcon icon={faCheck} /> Unlimited uploads</h5>
                                         <h5> <FontAwesomeIcon icon={faCheck} /> Priority customer support</h5>
@@ -119,10 +119,10 @@
                     <div className={styles.FeaturePlans} >
                         <div className={styles.FeaturePlansContainer} >
                             <div className={styles.FeaturePlansContainerTop}>
-                                <h1>Compare plans</h1>
+                                <h2>Compare plans</h2>
                             </div>
                             <div className={styles.FeaturePlansContainerBottom}>
-                                <h1 style={{ fontSize: "17px" }}> Feature</h1>
+                                <h2 style={{ fontSize: "17px" }}> Feature</h2>
                                 <div className={styles.RightPlans}>
                                     <h2 style={{ fontWeight: "bold" }}>Free</h2>
                                     <FontAwesomeIcon icon={faGlasses} />

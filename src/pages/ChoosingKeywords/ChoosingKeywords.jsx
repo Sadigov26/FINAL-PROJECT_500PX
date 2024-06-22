@@ -16,7 +16,7 @@ const ChoosingKeywords = () => {
             <div className={styles.LicensingStarting}>
                 <div className={styles.LicensingStartingContainer}>
                     <div className={styles.LicensingStartingContainerTop}>
-                        <h1>500px Licensing: Get Started</h1>
+                        <h2>500px Licensing: Get Started</h2>
                         <p>Easily license your photos for stock usage through 500px. It's quick to setup and completely optional for all membership levels.</p>
                     </div>
                     <li style={{ listStyle: "none" }}><a onClick={helpmenu} className={styles.TableContents}>Table of Contents
@@ -51,7 +51,7 @@ const ChoosingKeywords = () => {
                         <div className={styles.LicensingBottomDesk}>
                             <div className={styles.LicensingBottomDesk} id='#become-a-contributor'>
                                 <div className={styles.LicensingBottomDeskSSS}>
-                                    <h1>Keywording Guidelines</h1>
+                                    <h2>Keywording Guidelines</h2>
                                     <p>Adding keywords to your photos help people search for and find your work. Here are some ideas to help you write the best keywords.</p>
                                 </div>
                                 <div className={styles.LicensingBottomDeskSSS}>

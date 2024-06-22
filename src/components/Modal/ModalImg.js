@@ -8,7 +8,7 @@ const ModalImg = ({ isOpen, onClose, imageUrl }) => {
     return (
         <div className={styles.modalOverlay} onClick={onClose}>
             <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
-                <img src={imageUrl} alt="Large Image" className={styles.modalImage} />
+                <img src={imageUrl} alt="LargeImage" className={styles.modalImage} />
                 <button onClick={onClose} className={styles.closeButton}>
                 <IoClose />
                 </button>

@@ -20,7 +20,7 @@ const ContentTypes = () => {
             <div className={styles.LicensingStarting}>
                 <div className={styles.LicensingStartingContainer}>
                     <div className={styles.LicensingStartingContainerTop}>
-                        <h1>500px Licensing: Get Started</h1>
+                        <h2>500px Licensing: Get Started</h2>
                         <p>Easily license your photos for stock usage through 500px. It's quick to setup and completely optional for all membership levels.</p>
                     </div> <li style={{ listStyle: "none" }}><a onClick={helpmenu} className={styles.TableContents}>Table of Contents
                         <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -54,7 +54,7 @@ const ContentTypes = () => {
                         <div className={styles.LicensingBottomDesk}>
                             <div className={styles.LicensingBottomDesk} id='#become-a-contributor'>
                                 <div className={styles.LicensingBottomDeskSSS}>
-                                    <h1>Licensing content types</h1>
+                                    <h2>Licensing content types</h2>
                                     <p>Creative (Commercial) or Editorial. Knowing the difference and understanding what type of content is considered safe for commercial use versus what is restricted to editorial use only, will help make the submission process more smooth.</p>
                                 </div>
                                 <div className={styles.LicensingBottomDeskSSS}>
@@ -131,7 +131,7 @@ const ContentTypes = () => {
                                     <li>Relevant subject matter: Technology, Communication</li>
                                 </div>
                                 <a style={{ width: "100%", textAlign: "end", paddingTop: "30px", color: '#2995F9', textDecoration: "none", display: "flex", alignItems: "center", justifyContent: "end", gap: "10px" }} href="/licensing/distribution">Distribution<FaChevronRight /></a>
-                                =
+                                
                             </div>
                         </div>
                     </div>

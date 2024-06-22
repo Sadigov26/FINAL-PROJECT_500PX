@@ -144,6 +144,7 @@
             justify-content: space-between;
             align-items: center;
             width: 90%;
+            padding-bottom: 15px;
 
             .getTheAppLeft {
                 display: flex;
@@ -175,7 +176,8 @@
                     gap: 20px;
 
                     a {
-                        width: 23%;
+
+                        width: 34%;
                         z-index: 45;
                         height: 60px;
                         border-radius: 10px;
@@ -185,7 +187,9 @@
                         gap: 20px;
 
                         img {
+                            height: 95%;
                             width: 100%;
+                            border-radius: 10px;
                         }
                     }
                 }
@@ -317,6 +321,7 @@
 
                         img {
                             width: 50%;
+                            height: 95%;
                         }
                     }
                 }

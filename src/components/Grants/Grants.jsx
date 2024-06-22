@@ -22,14 +22,10 @@ import nine6 from '../../about/image copy 24.png'
 import nine3 from '../../about/image copy 25.png'
 import nine1 from '../../about/image copy 26.png'
 import nine2 from '../../about/image copy 27.png'
-
-
 import ten5 from '../../about/image copy 28.png'
 import teen2 from '../../about/image copy 29.png'
 import teen6 from '../../about/image copy 30.png'
 import ten8 from '../../about/image copy 31.png'
-
-
 import { LuCrown } from 'react-icons/lu'
 import { CiImageOn, CiMail, CiUser } from 'react-icons/ci'
 import { BsFiletypeTxt } from 'react-icons/bs'
@@ -57,7 +53,7 @@ const Grants = () => {
                 <div className={styles.GrantsSecond}>
                     <div className={styles.GrantsSecondContainer} >
                         <div className={styles.GrantsSecondText}>
-                            <h1>What is it?</h1>
+                            <h2>What is it?</h2>
                             <p>Get paid to develop a Licensing shoot, build an extensive Licensing portfolio, and grow as a photographer. With 500px Commercial Grants, you have the opportunity to redefine and shift how brands advertise, while providing commercial content that represents a unique and diverse experience.</p>
                             <a href="">Check out the latest Grant</a>
                         </div>
@@ -69,11 +65,11 @@ const Grants = () => {
                 <div className={styles.GrantsThree}>
                     <div className={styles.GrantsThreeContainer}>
                         <div className={styles.GrantsThreeContainerTop}>
-                            <h1>How it Works</h1>
+                            <h2>How it Works</h2>
                         </div>
                         <div className={styles.GrantsThreeContainerMiddle}>
                             <div className={styles.GrantsThreeContainerLeft}>
-                                <h1>Phase 1: Pitch your shoot</h1>
+                                <h2>Phase 1: Pitch your shoot</h2>
                                 <h3> <CiUser />1. Log in or create a 500px Profile</h3>
                                 <h3><BsFiletypeTxt />2. See what’s open, review the brief, check the inspo</h3>
                                 <h3><CiImageOn />3. Submit photo(s) to the Quest for consideration</h3>
@@ -81,7 +77,7 @@ const Grants = () => {
 
                             </div>
                             <div className={styles.GrantsThreeContainerRight}>
-                                <h1>Phase 2: Develop your shoot</h1>
+                                <h2>Phase 2: Develop your shoot</h2>
                                 <h3><AiOutlineHeart />1. Collaborate with the 500px Content Team</h3>
                                 <h3><GiFireFlower />2. See concept through to reality</h3>
                                 <h3><CiImageOn />3. Submit your shoot to 500px for <a href="/licensing">Licensing</a></h3>
@@ -95,7 +91,7 @@ const Grants = () => {
                 </div>
                 <div className={styles.GrantsFour}>
                     <div className={styles.GrantsFourContainer}>
-                        <h1>What we've done</h1>
+                        <h2>What we've done</h2>
                         <ul className={styles.styky}>
                             <li><a href="#Breaking" style={{ borderRight: "2px solid #2C3D63" }}>Breaking the Mold</a></li>
                             <li><a href="#ShowUs" style={{ borderRight: "2px solid #2C3D63" }}>Project #ShowUs</a></li>
@@ -108,7 +104,7 @@ const Grants = () => {
                 <div className={styles.GrantsFive} id='Breaking'>
                     <div className={styles.GrantsFiveContainer}>
                         <div className={styles.GrantsFiveContainerTop}>
-                            <h1>Breaking the Mold</h1>
+                            <h2>Breaking the Mold</h2>
                         </div>
                         <div className={styles.GrantsFiveContainerMiddle}>
                             <div className={styles.GrantsFiveContainerMiddleLeft}>
@@ -122,7 +118,6 @@ const Grants = () => {
                                 <div className={styles.GrantsFiveContainerMiddleLeftBottom}>
                                     <img src={five1} alt="" />
                                 </div>
-
                             </div>
                             <div className={styles.GrantsFiveContainerMiddleRight}>
                                 <img src={five2} alt="" />
@@ -142,7 +137,7 @@ const Grants = () => {
                 <div className={styles.GrantsSeven} id='ShowUs'>
                     <div className={styles.GrantsSevenContainer}>
                         <div className={styles.GrantsSevenContainerTop}>
-                            <h1>Project #ShowUs</h1>
+                            <h2>Project #ShowUs</h2>
                         </div>
                         <div className={styles.GrantsSevenContainerMiddle}>
                             <div className={styles.GrantsSevenContainerMiddleLeft}>
@@ -177,7 +172,7 @@ const Grants = () => {
                 <div className={styles.GrantsEight} id='Reimagining '>
                     <div className={styles.GrantsEightContainer}>
                         <div className={styles.GrantsEightContainerTop}>
-                            <h1>Reimagining Mental Health</h1>
+                            <h6>Reimagining Mental Health</h6>
                         </div>
                         <div className={styles.GrantsEightContainerMiddle}>
                             <div className={styles.GrantsEightContainerMiddleLeft}>
@@ -191,7 +186,6 @@ const Grants = () => {
                                 <div className={styles.GrantsEightContainerMiddleLeftBottom}>
                                     <img src={eight5} alt="" />
                                     <img src={eight8} alt="" />
-
                                 </div>
                             </div>
                             <div className={styles.GrantsEightContainerMiddleRight}>
@@ -204,7 +198,7 @@ const Grants = () => {
                 <div className={styles.GrantsNine} id='Reimagining '>
                     <div className={styles.GrantsNineContainer}>
                         <div className={styles.GrantsNineContainerTop}>
-                            <h1>Intersectional Diversity</h1>
+                            <h2>Intersectional Diversity</h2>
                         </div>
                         <div className={styles.GrantsNineContainerMiddle}>
                             <div className={styles.GrantsNineContainerMiddleLeft}>
@@ -225,10 +219,10 @@ const Grants = () => {
 
                         </div>
                         <div className={styles.GrantsNineContainerBottom}>
-                            <div className={styles.GrantsFiveContainerBottomLeft}>
+                            <div className={styles.GrantsNineContainerBottomLeft}>
                                 <img src={nine3} alt="" />
                             </div>
-                            <div className={styles.GrantsFiveContainerBottomRight}>
+                            <div className={styles.GrantsNineContainerBottomRight}>
                                 <img src={nine1} alt="" />
                                 <img src={nine2} alt="" />
                             </div>
@@ -238,7 +232,7 @@ const Grants = () => {
                 <div className={styles.GrantsTen} id='Reimagining '>
                     <div className={styles.GrantsTenContainer}>
                         <div className={styles.GrantsTenContainerTop}>
-                            <h1>Life Online</h1>
+                            <h2>Life Online</h2>
                         </div>
                         <div className={styles.GrantsTenContainerMiddle}>
                             <div className={styles.GrantsTenContainerMiddleLeft}>
@@ -264,7 +258,7 @@ const Grants = () => {
                 <div className={styles.AboutEnd}>
                     <div className={styles.AboutEndContainer}>
                         <LuCrown style={{fontSize:"40px"}}/>
-                        <h1>About 500px Licensing</h1>
+                        <h2>About 500px Licensing</h2>
                         <p>Sell your photos, keep your copyright, and get your photography the attention it deserves. Submit your photography to 500px Licensing in just a few clicks. Once your photos are approved for our collection, you can earn up to 60% royalties on your photos that are licensed exclusively through 500px.</p>
                         <a href="/licensing" target='blank'>Learn more</a>
                     </div>

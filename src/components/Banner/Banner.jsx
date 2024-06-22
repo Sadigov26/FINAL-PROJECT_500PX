@@ -15,7 +15,7 @@ const Banner = () => {
             <div className={styles.Banner}>
                 <div className={styles.BannerContainer}>
                     <div className={styles.BannerContainerTop}>
-                        <h1>The best of the best.</h1>
+                        <h2>The best of the best.</h2>
                         <p>Our editors are always on the lookout for jaw dropping content for you to discover and stay inspired. Check back weekly to see what’s new.</p>
                         <button>View Editors' Choice</button>
                     </div>

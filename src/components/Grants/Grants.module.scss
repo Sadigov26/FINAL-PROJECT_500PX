@@ -31,23 +31,25 @@
             .GrantsContainerHeroText {
                 display: flex;
                 justify-content: start;
-                align-items: start;
                 flex-direction: column;
                 width: 100%;
+                text-align: start;
 
                 .desc {
                     font-size: 16px;
                     color: #fff;
                     width: 38%;
                     line-height: 1.2;
+                    text-align: start;
                 }
 
                 .bigTitle {
+                    text-align: start;
                     font-size: 48px;
                     font-weight: 600;
                     color: #fff;
-                    width: 600px;
-                    margin-bottom: 15px;
+                    width: 80%;
+                    padding-bottom: 15px;
                 }
             }
         }
@@ -66,6 +68,8 @@
         align-items: center;
         justify-content: center;
         width: 100%;
+        padding-bottom: 17px;
+        padding-top: 17px;
 
         .GrantsSecondContainer {
             display: flex;
@@ -91,7 +95,7 @@
                     text-decoration: none;
                 }
 
-                h1 {
+                h2 {
                     color: #2C3D63;
                     font-size: 34px;
                     font-weight: 700;
@@ -118,7 +122,9 @@
         justify-content: center;
         width: 100%;
         background-color: #2C3D63;
-        min-height: 50vh;
+        min-height: 60vh;
+        padding-bottom: 27px;
+        padding-top: 27px;
 
         .GrantsThreeContainer {
             display: flex;
@@ -136,7 +142,7 @@
                 justify-content: center;
 
 
-                h1 {
+                h2 {
                     font-size: 36px;
                     color: #FFDD66;
                 }
@@ -156,10 +162,10 @@
                     align-items: start;
                     justify-content: start;
                     flex-direction: column;
-                    width: 70%;
-                    gap: 25px;
+                    width: 100%;
+                    gap: 10px;
 
-                    h1 {
+                    h2 {
                         padding-bottom: 15px;
                         font-size: 36px;
                         color: #FFDD66;
@@ -199,7 +205,7 @@
         justify-content: center;
         width: 100%;
         background-color: #FFDD66;
-        min-height: 20vh;
+        min-height: 25vh;
 
         .GrantsFourContainer {
             display: flex;
@@ -209,7 +215,7 @@
             flex-direction: column;
             gap: 30px;
 
-            h1 {
+            h2 {
                 color: rgb(44, 61, 99);
                 font-size: 36px;
             }
@@ -221,6 +227,8 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                flex-wrap: wrap;
+                gap: 10px;
 
                 li {
                     list-style: none;
@@ -260,7 +268,7 @@
                 align-items: center;
                 justify-content: center;
 
-                h1 {
+                h2 {
                     color: #AF375B;
                     font-size: 76px;
                 }
@@ -273,6 +281,7 @@
                 gap: 20px;
                 width: 100%;
 
+                .GrantsFiveContainerMiddleRight,
                 .GrantsFiveContainerMiddleLeft,
                 .GrantsFiveContainerMiddleLeftTop {
                     display: flex;
@@ -282,17 +291,21 @@
                     gap: 20px;
                     width: 80%;
 
+                    img {
+                        width: 100%;
+                    }
+
                     h3 {
                         color: #AF375B;
                     }
 
                     .grantsFiveBtn {
                         display: flex;
-                        align-items: start;
+                        align-items: center;
                         justify-content: start;
                         width: 100%;
                         gap: 20px;
-
+                        text-align: center;
 
                         a {
                             text-decoration: none;
@@ -313,6 +326,10 @@
                 gap: 20px;
                 width: 100%;
 
+                img {
+                    width: 100%;
+                }
+
                 .GrantsFiveContainerBottomLeft,
                 .GrantsFiveContainerBottomRight {
                     display: flex;
@@ -321,6 +338,10 @@
                     flex-direction: column;
                     gap: 20px;
                     width: 80%;
+
+                    img {
+                        width: 100%;
+                    }
                 }
             }
         }
@@ -350,7 +371,7 @@
                 align-items: center;
                 justify-content: center;
 
-                h1 {
+                h2 {
                     color: #DDFFF2;
                     font-size: 76px;
                 }
@@ -362,6 +383,10 @@
                 justify-content: center;
                 gap: 20px;
                 width: 100%;
+
+                img {
+                    width: 100%;
+                }
 
                 .GrantsSevenContainerMiddleLeft,
                 .GrantsSevenContainerMiddleLeftTop {
@@ -376,12 +401,17 @@
                         color: #DDFFF2;
                     }
 
+                    img {
+                        width: 100%;
+                    }
+
                     .grantsSevenBtn {
                         display: flex;
-                        align-items: start;
+                        align-items: center;
                         justify-content: start;
                         width: 100%;
                         gap: 20px;
+                        text-align: center;
 
                         a {
                             text-decoration: none;
@@ -410,6 +440,10 @@
                     flex-direction: column;
                     gap: 20px;
                     width: 80%;
+
+                    img {
+                        width: 100%;
+                    }
                 }
             }
         }
@@ -439,9 +473,9 @@
                 align-items: center;
                 justify-content: center;
 
-                h1 {
+                h6 {
                     color: #AF375B;
-                    font-size: 76px;
+                    font-size: 60px;
                 }
             }
 
@@ -451,6 +485,13 @@
                 justify-content: center;
                 gap: 20px;
                 width: 100%;
+                padding-bottom: 17px;
+
+                .GrantsEightContainerMiddleRight {
+                    img {
+                        width: 100%;
+                    }
+                }
 
                 .GrantsEightContainerMiddleLeft,
                 .GrantsEightContainerMiddleLeftTop {
@@ -461,16 +502,21 @@
                     gap: 20px;
                     width: 80%;
 
+                    img {
+                        width: 100%;
+                    }
+
                     h3 {
                         color: #AF375B;
                     }
 
                     .grantsEightBtn {
                         display: flex;
-                        align-items: start;
+                        align-items: center;
                         justify-content: start;
                         width: 100%;
                         gap: 20px;
+                        text-align: center;
 
                         a {
                             text-decoration: none;
@@ -491,6 +537,10 @@
                 gap: 20px;
                 width: 100%;
 
+                img {
+                    width: 100%;
+                }
+
                 .GrantsEightContainerBottomLeft,
                 .GrantsEightContainerBottomRight {
                     display: flex;
@@ -499,6 +549,10 @@
                     flex-direction: column;
                     gap: 20px;
                     width: 80%;
+
+                    img {
+                        width: 100%;
+                    }
                 }
             }
         }
@@ -528,9 +582,9 @@
                 align-items: center;
                 justify-content: center;
 
-                h1 {
+                h2 {
                     color: #027A95;
-                    font-size: 76px;
+                    font-size: 60px;
                 }
             }
 
@@ -541,6 +595,10 @@
                 gap: 20px;
                 width: 100%;
 
+                img {
+                    width: 100%;
+                }
+
                 .GrantsNineContainerMiddleLeft,
                 .GrantsNineContainerMiddleLeftTop {
                     display: flex;
@@ -550,16 +608,21 @@
                     gap: 20px;
                     width: 80%;
 
+                    img {
+                        width: 100%;
+                    }
+
                     h3 {
                         color: #027A95;
                     }
 
                     .grantsNineBtn {
                         display: flex;
-                        align-items: start;
+                        align-items: center;
                         justify-content: start;
                         width: 100%;
                         gap: 20px;
+                        text-align: center;
 
                         a {
                             text-decoration: none;
@@ -579,6 +642,10 @@
                 justify-content: center;
                 gap: 20px;
                 width: 100%;
+
+                img {
+                    width: 100%;
+                }
             }
 
             .GrantsNineContainerMiddleRight {
@@ -587,6 +654,10 @@
                 justify-content: center;
                 gap: 20px;
                 width: 100%;
+
+                img {
+                    width: 100%;
+                }
             }
         }
 
@@ -596,12 +667,20 @@
             justify-content: space-between;
             width: 100%;
 
+            img {
+                width: 100%;
+            }
+
             .GrantsFiveContainerBottomLeft {
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 width: 50%;
                 gap: 20px;
+
+                img {
+                    width: 100%;
+                }
             }
 
             .GrantsFiveContainerBottomRight {
@@ -611,6 +690,10 @@
                 width: 50%;
                 gap: 20px;
                 flex-direction: column;
+
+                img {
+                    width: 100%;
+                }
             }
         }
     }
@@ -622,19 +705,20 @@
         width: 100%;
         background-color: #2C3D63;
         min-height: 40vh;
+        padding-bottom: 17px;
 
         .AboutEndContainer {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 30%;
+            width: 60%;
             flex-direction: column;
             color:
                 rgb(255, 221, 102);
             gap: 20px;
             text-align: center;
 
-            h1 {
+            h2 {
                 font-size: 36px;
             }
 
@@ -678,7 +762,7 @@
                 align-items: center;
                 justify-content: center;
 
-                h1 {
+                h2 {
                     color: #2C3D63;
                     font-size: 76px;
                 }
@@ -690,6 +774,10 @@
                 justify-content: center;
                 gap: 20px;
                 width: 100%;
+
+                img {
+                    width: 100%;
+                }
 
                 .GrantsTenContainerMiddleLeft,
                 .GrantsTenContainerMiddleLeftTop {
@@ -704,12 +792,17 @@
                         color: #2C3D63;
                     }
 
+                    img {
+                        width: 100%;
+                    }
+
                     .grantsTenBtn {
                         display: flex;
-                        align-items: start;
+                        align-items: center;
                         justify-content: start;
                         width: 100%;
                         gap: 20px;
+                        text-align: center;
 
                         a {
                             text-decoration: none;
@@ -718,14 +811,88 @@
                             border-radius: 100px;
                             color: #2C3D63;
                             border: 2px solid #2C3D63;
+                            padding-bottom: 17px;
                         }
                     }
                 }
             }
+        }
+    }
+}
 
 
+@media screen and (min-width:280px)and (max-width:860px) {
+    .Grants {
+        .GrantsContainerHero {
+            background-position: right 20%;
+        }
 
+        .GrantsSecondContainer {
+            flex-direction: column;
+
+            a {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        .GrantsThreeContainerMiddle {
+            flex-direction: column;
+
+            .GrantsThreeContainerLeft {
+                width: 100%;
+            }
+        }
+
+        .GrantsFour {
+            min-height: 34vh;
+            padding-bottom: 50px;
 
         }
+.GrantsFiveContainerBottomRight,
+        .GrantsSevenContainerMiddle,
+        .GrantsFiveContainerMiddle {
+            flex-direction: column;
+        }
+.GrantsTenContainerMiddle,
+        .GrantsNineContainerBottom,
+        .GrantsNineContainerMiddle,
+        .GrantsEightContainerMiddle,
+        .GrantsSevenContainerBottom,
+        .GrantsFiveContainerBottom {
+            flex-direction: column;
+        }
+
+        .GrantsEight {
+            .GrantsEightContainerTop {
+                h6 {
+                    font-size: 40px;
+                    text-align: center;
+                }
+            }
+        }
+
+        .GrantsNineContainerTop,
+        .GrantsSevenContainerTop,
+        .GrantsFiveContainerTop {
+            h2 {
+                font-size: 50px;
+                text-align: center;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }

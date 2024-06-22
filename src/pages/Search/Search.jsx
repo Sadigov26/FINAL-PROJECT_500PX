@@ -61,10 +61,14 @@ const Search = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            if (window.innerHeight + document.documentElement.scrollTop !== document.documentElement.offsetHeight || loading) return;
-            setPage((prevPage) => prevPage + 1);
+            if (
+                window.innerHeight + document.documentElement.scrollTop >= document.documentElement.offsetHeight - 100
+                && !loading
+            ) {
+                setPage((prevPage) => prevPage + 1);
+            }
         };
-
+        
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, [loading]);
@@ -107,7 +111,7 @@ const Search = () => {
                         <img src={neww} alt="" />
                     </div>
                 </div>
-                <h1>Search Results for "{query}"</h1>
+                <h2>Search Results for "{query}"</h2>
                 {loading && page === 1 ? (
                     <div className={styles.spinnerContainer}>
                         <div className={styles.spinner}></div>

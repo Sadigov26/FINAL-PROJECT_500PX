@@ -41,7 +41,7 @@ const Discover = () => {
             <Header />
             <div className={styles.DiscoverContainer}>
                 <div className={styles.DiscoverContainerTop}>
-                    <h1>Select categories</h1>
+                    <h2>Select categories</h2>
                     <p>Customize your feed by choosing up to category that interest you the most</p>
                 </div>
                 <div className={styles.DiscoverContainerBottom}>

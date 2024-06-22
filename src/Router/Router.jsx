@@ -27,31 +27,31 @@ import Blog from '../pages/Blog/Blog';
 const Router = () => {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/awards_winners_2023' element={<AwardWinners />} />
-        <Route path='/upgrade' element={<Upgrade />} />
-        <Route path='/licensing' element={<LicensingDrop />} />
-        <Route path='/quests' element={<Quests />} />
-        <Route path='/quests/licensing' element={<QuestsLicensing />} />
-        <Route path='/quests/archive' element={<QuestProductsArchive />} />
-        <Route path='/licensing/licensing' element={<StockPhotoLicensing />} />
-        <Route path='/licensing/contribute' element={<BecomeAContributor />} />
-        <Route path='/licensing/requirements' element={<SubmissionRequirements />} />
-        <Route path='/licensing/releases' element={<Releases />} />
-        <Route path='/licensing/keywording' element={<ChoosingKeywords />} />
-        <Route path='/licensing/content' element={<ContentTypes />} />
-        <Route path='/licensing/distribution' element={<Lisans />} />
-        <Route path='/grants' element={<CommercialGrants />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/register' element={<Register />} />
-        <Route path='/recover' element={<Recover />} />
-        <Route path='/signup' element={<Signup />} />
-        <Route path='/search' element={<Search />} />
-        <Route path='/discover' element={<Discover />} />
-        <Route path='/blog' element={<Blog />} />
-        <Route path='/category/:categoryName' element={<CategoryPhotos />} />
-      </Routes>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/awards_winners_2023' element={<AwardWinners />} />
+          <Route path='/upgrade' element={<Upgrade />} />
+          <Route path='/licensing' element={<LicensingDrop />} />
+          <Route path='/quests' element={<Quests />} />
+          <Route path='/quests/licensing' element={<QuestsLicensing />} />
+          <Route path='/quests/archive' element={<QuestProductsArchive />} />
+          <Route path='/licensing/licensing' element={<StockPhotoLicensing />} />
+          <Route path='/licensing/contribute' element={<BecomeAContributor />} />
+          <Route path='/licensing/requirements' element={<SubmissionRequirements />} />
+          <Route path='/licensing/releases' element={<Releases />} />
+          <Route path='/licensing/keywording' element={<ChoosingKeywords />} />
+          <Route path='/licensing/content' element={<ContentTypes />} />
+          <Route path='/licensing/distribution' element={<Lisans />} />
+          <Route path='/grants' element={<CommercialGrants />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/register' element={<Register />} />
+          <Route path='/recover' element={<Recover />} />
+          <Route path='/signup' element={<Signup />} />
+          <Route path='/search' element={<Search />} />
+          <Route path='/discover' element={<Discover />} />
+          <Route path='/blog' element={<Blog />} />
+          <Route path='/category/:categoryName' element={<CategoryPhotos />} />
+        </Routes>
     </BrowserRouter>
   );
 };

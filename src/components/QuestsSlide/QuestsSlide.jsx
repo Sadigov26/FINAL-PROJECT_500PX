@@ -14,7 +14,7 @@ const QuestsSlide = () => {
     ];
 
     const [currentSlide, setCurrentSlide] = useState(0);
-    const [autoplay, setAutoplay] = useState(true);
+    const [autoplay] = useState(true);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -24,7 +24,7 @@ const QuestsSlide = () => {
         }, 3000); // Change slide every 3 seconds
 
         return () => clearInterval(interval);
-    }, [autoplay, currentSlide]); // currentSlide'i değişikliklere ekleyin
+    }, ); // currentSlide'i değişikliklere ekleyin
 
     const handleNext = () => {
         setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length); // setCurrentSlide fonksiyonunu bir callback ile güncelleyin
@@ -39,8 +39,8 @@ const QuestsSlide = () => {
             <div className={styles.slide}>
                 <img src={slides[currentSlide].image} alt={slides[currentSlide].title} className={styles.slideImage} />
                 <div className={styles.slideContent}>
-                    <h1 className={styles.slideTitle}>{slides[currentSlide].title}</h1>
-                    <p style={{ width: "30%", fontSize: "20px", marginTop: "10px", marginBottom: "10px" }} className={styles.slideDescription}>{slides[currentSlide].description}</p>
+                    <h2 className={styles.slideTitle}>{slides[currentSlide].title}</h2>
+                    <p style={{ minWidth: "50%", fontSize: "20px", marginTop: "10px", marginBottom: "10px" }} className={styles.slideDescription}>{slides[currentSlide].description}</p>
                 </div>
             </div>
             <button onClick={handlePrev} className={styles.prevButton}><FaChevronLeft  style={{fontSize:"23px"}}/></button>

@@ -42,7 +42,7 @@ const QuestProductsArchive = () => {
         <div className={styles.QuestProducts}>
             <div className={styles.QuestProductsContainer}>
                 <div className={styles.QuestProductsContainerTop}>
-                    <h1><IoRocket style={{ color: "#0870D1" }} /> Quest categories</h1>
+                <h2><IoRocket style={{ color: "#0870D1" }} /> Quest categories</h2>
                     <div className={styles.QuestProductsNavbar}>
                         <ul>
                             <li><a href="/quests">Community</a></li>

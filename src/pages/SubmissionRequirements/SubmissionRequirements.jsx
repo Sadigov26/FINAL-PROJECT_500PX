@@ -30,7 +30,7 @@ const SubmissionRequirements = () => {
             <div className={styles.LicensingStarting}>
                 <div className={styles.LicensingStartingContainer}>
                     <div className={styles.LicensingStartingContainerTop}>
-                        <h1>500px Licensing: Get Started</h1>
+                        <h2>500px Licensing: Get Started</h2>
                         <p>Easily license your photos for stock usage through 500px. It's quick to setup and completely optional for all membership levels.</p>
                     </div>.
                     <li style={{ listStyle: "none" }}><a onClick={helpmenu} className={styles.TableContents}>Table of Content
@@ -65,7 +65,7 @@ const SubmissionRequirements = () => {
                         <div className={styles.LicensingBottomDesk}>
                             <div className={styles.LicensingBottomDesk} id='#become-a-contributor'>
                                 <div className={styles.LicensingBottomDeskSSS}>
-                                    <h1>Quality and technical requirements</h1>
+                                    <h2>Quality and technical requirements</h2>
                                     <p>What it takes for photos to be considered for our collection.</p>
                                 </div>
                                 <div className={styles.LicensingBottomDeskSSS}>

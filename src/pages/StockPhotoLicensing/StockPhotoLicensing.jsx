@@ -15,7 +15,7 @@ const StockPhotoLicensing = () => {
             <div className={styles.LicensingStarting}>
                 <div className={styles.LicensingStartingContainer}>
                     <div className={styles.LicensingStartingContainerTop}>
-                        <h1>500px Licensing: Get Started</h1>
+                        <h2>500px Licensing: Get Started</h2>
                         <p>Easily license your photos for stock usage through 500px. It's quick to setup and completely optional for all membership levels.</p>
                     </div>
                     <li style={{ listStyle: "none" }}><a onClick={helpmenu} className={styles.TableContents}>Table of Contents
@@ -48,7 +48,7 @@ const StockPhotoLicensing = () => {
                         </div>
                         <div className={styles.LicensingBottomDesk}>
                             <div className={styles.section}>
-                                <h1>Learn about stock photo licensing</h1>
+                                <h2>Learn about stock photo licensing</h2>
                                 <p>Easily license your photos for stock photography usage through 500px and our distribution partners. It's quick to setup and completely optional for all membership levels.</p>
 
                                 <div className={styles.LicensingBottomDeskSSS}>

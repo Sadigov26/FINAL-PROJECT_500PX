@@ -12,7 +12,7 @@ const LicensingStarting = () => {
             <div className={styles.LicensingStarting}>
                 <div className={styles.LicensingStartingContainer}>
                     <div className={styles.LicensingStartingContainerTop}>
-                        <h1>500px Licensing: Get Started</h1>
+                        <h2>500px Licensing: Get Started</h2>
                         <p>Easily license your photos for stock usage through 500px. It's quick to setup and completely optional for all membership levels.</p>
                     </div>.
                     <li style={{ listStyle: "none" }}><a onClick={helpmenu} className={styles.TableContents}>Table of Contents
@@ -47,7 +47,7 @@ const LicensingStarting = () => {
                         <div className={styles.LicensingBottomDesk}>
                             <div className={styles.Distribution} >
                                 <div className={styles.LicensingBottomDeskSSS}>
-                                    <h1>From 500px to Everywhere</h1>
+                                    <h2>From 500px to Everywhere</h2>
                                     <p>500px works exclusively with two trusted, strategic distribution partners - Getty Images & VCG (Visual China Group) - to increase the global exposure of our Contributor’s photography.</p>
                                 </div>
                                 <div className={styles.LicensingBottomDeskSSS}>

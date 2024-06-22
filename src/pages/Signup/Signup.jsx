@@ -2,86 +2,104 @@ import React, { useEffect, useState } from 'react';
 import styles from '../Login/Login.module.scss';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
-import { useNavigate } from 'react-router-dom';
-import { useRegisterMutation } from "../../redux/slices/usersApiSlice";
-import { useDispatch, useSelector } from "react-redux";
-import { setCredentials } from "../../redux/slices/authSlice";
-import { toast } from "react-toastify";
+import { useDispatch, useSelector } from 'react-redux';
+import { setCredentials } from '../../redux/slices/authSlice';
+import { useNavigate, Link } from 'react-router-dom';
+import { useRegisterMutation } from '../../redux/slices/usersApiSlice';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Signup = () => {
-
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
-
-    const navigation = useNavigate();
+    const navigate = useNavigate();
     const dispatch = useDispatch();
 
+    const { userInfo } = useSelector((state) => state.auth);
     const [register, { isLoading }] = useRegisterMutation();
-
-    const { userInfo } = useSelector(state => state.auth);
 
     useEffect(() => {
         if (userInfo) {
-            navigation('/dashboard');
+            navigate('/');
         }
-    }, [navigation, userInfo]);
+    }, [navigate, userInfo]);
 
-
+    const validateEmail = (email) => {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(String(email).toLowerCase());
+    };
 
     const handleRegister = async (e) => {
         e.preventDefault();
-        if (password !== confirmPassword) {
-            toast.error('Sifreler duz deyil');
+
+        if (!email) {
+            toast.error('Email is required');
+            return;
+        } else if (!validateEmail(email)) {
+            toast.error('Invalid email address');
             return;
         }
-        try {
-            const res = await register({ name, email, password }).unwrap();
-            dispatch(setCredentials({ ...res }));
-            navigation('/dashboard');
-        } catch (error) {
-            toast.error('Register fail');
-        }
-    }
 
+        if (!name) {
+            toast.error('Name is required');
+            return;
+        }
+
+        if (!password) {
+            toast.error('Password is required');
+            return;
+        }
+
+        if (password !== confirmPassword) {
+            toast.error('Passwords do not match');
+            return;
+        }
+
+        try {
+            const { data } = await register({ name, email, password });
+            dispatch(setCredentials(data));
+            navigate('/');
+            toast.success('Registration successful!');
+        } catch (error) {
+            toast.error(`Registration failed: ${error.data?.message || error.message}`);
+        }
+    };
 
     return (
-        <div style={{ width: "100%", gap: "80px", minHeight: "100vh", display: "flex", flexDirection: "column", backgroundColor: "#F7F8FA" }}>
+        <div style={{ width: '100%', gap: '80px', minHeight: '100vh', display: 'flex', flexDirection: 'column', backgroundColor: '#F7F8FA' }}>
             <Header />
             <div className={styles.Login}>
+                <ToastContainer position="top-right" />
                 <div className={styles.LoginContainer}>
                     <div className={styles.LoginContainerSignup}>
-                        <span>Sign up with <a href="">Apple,</a> <a href="">Facebook</a> or <a href="">Google</a></span>
+                        <span>
+                            Sign up with <a href="#">Apple,</a> <a href="#">Facebook</a> or <a href="#">Google</a>
+                        </span>
                     </div>
                     <div className={styles.distancLog}>
-                        <div style={{ width: '40%', height: "2px", backgroundColor: "gray" }}></div>
+                        <div style={{ width: '40%', height: '2px', backgroundColor: 'gray' }}></div>
                         <span>or</span>
-                        <div style={{ width: '40%', height: "2px", backgroundColor: "gray" }}></div>
+                        <div style={{ width: '40%', height: '2px', backgroundColor: 'gray' }}></div>
                     </div>
-                    <form onSubmit={handleRegister} className={styles.LoginContainerInput}>
+                    <form className={styles.LoginContainerInput} onSubmit={handleRegister}>
                         <div className={styles.EmailorUsername}>
-                            <label htmlFor="email"><span>Email*</span></label>
-                            <input
-                                type="text"
-                                name="email"
-                                placeholder="Email"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                            />
+                            <label htmlFor="email">
+                                <span>Email*</span>
+                            </label>
+                            <input type="text" name="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
                         </div>
                         <div className={styles.EmailorUsername}>
-                            <label htmlFor="username"><span>Username*</span></label>
-                            <input
-                                type="text"
-                                name="name"
-                                placeholder="Name"
-                                value={name}
-                                onChange={(e) => setName(e.target.value)}
-                            />
+                            <label htmlFor="username">
+                                <span>Username*</span>
+                            </label>
+                            <input type="text" name="name" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
                         </div>
                         <div className={styles.EmailorUsername}>
-                            <label htmlFor="password"><span>Password*</span></label>
+                            <label htmlFor="password">
+                                <span>Password*</span>
+                            </label>
                             <input
                                 type="password"
                                 name="password"
@@ -89,6 +107,11 @@ const Signup = () => {
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                             />
+                        </div>
+                        <div className={styles.EmailorUsername}>
+                            <label htmlFor="confirmPassword">
+                                <span>Confirm Password*</span>
+                            </label>
                             <input
                                 type="password"
                                 name="confirmPassword"
@@ -99,15 +122,16 @@ const Signup = () => {
                         </div>
                         <div className={styles.EmailorUsername}>
                             <button type="submit" disabled={isLoading}>
-                                {isLoading ? 'User creating' : 'Register'}
+                                {isLoading ? 'Creating User...' : 'Register'}
                             </button>
                         </div>
                     </form>
 
-
                     <div className={styles.LoginContainerInput}>
                         <div className={styles.LoginContainerSignup}>
-                            <p>Already have an account? <a href="/login">Log in</a></p>
+                            <p>
+                                Already have an account? <Link to="/login">Log in</Link>
+                            </p>
                         </div>
                     </div>
                 </div>

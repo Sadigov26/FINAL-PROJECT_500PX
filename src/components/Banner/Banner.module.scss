@@ -2,7 +2,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
+    min-height: 150vh;
+    padding-bottom: 40px;
     padding-top: 40px;
 
     .BannerContainer {
@@ -18,8 +19,10 @@
             justify-content: center;
             flex-direction: column;
             gap: 16px;
+            width: 90%;
+            text-align: center;
 
-            h1 {
+            h2 {
                 font-size: 30px;
                 color: black;
 
@@ -52,8 +55,8 @@
                 align-items: center;
                 justify-content: center;
                 flex-wrap: wrap;
-                width: 80%;
-                gap: 15px;
+                width: 85%;
+                gap: 10px;
 
                 .imageBanner,
                 .imageBannerTwo {
@@ -81,7 +84,8 @@
 
                 img {
                     width: auto;
-                    height: 330px;
+                    padding-top: 10px;
+                    height: 340px;
                 }
 
             }
@@ -99,6 +103,7 @@
 
             .BannerContainerBottom {
                 margin-bottom: 20px;
+
                 .BannerContainerBottomImg {
                     .imageBanner {
                         width: 100%;
@@ -109,6 +114,8 @@
 
                         img {
                             width: 100%;
+                            object-fit: cover;
+                            object-position: center;
                         }
                     }
 

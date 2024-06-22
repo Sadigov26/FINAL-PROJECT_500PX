@@ -15,7 +15,7 @@ const Releases = () => {
             <div className={styles.LicensingStarting}>
                 <div className={styles.LicensingStartingContainer}>
                     <div className={styles.LicensingStartingContainerTop}>
-                        <h1>500px Licensing: Get Started</h1>
+                        <h2>500px Licensing: Get Started</h2>
                         <p>Easily license your photos for stock usage through 500px. It's quick to setup and completely optional for all membership levels.</p>
                     </div>
                     <li style={{ listStyle: "none" }}><a onClick={helpmenu} className={styles.TableContents}>Table of Contents
@@ -50,7 +50,7 @@ const Releases = () => {
                         <div className={styles.LicensingBottomDesk}>
                             <div className={styles.LicensingBottomDesk} id='#become-a-contributor'>
                                 <div className={styles.LicensingBottomDeskSSS}>
-                                    <h1>Understanding model and property releases</h1>
+                                    <h2>Understanding model and property releases</h2>
                                     <p>What they are and when you need them</p>
                                 </div>
                                 <div className={styles.LicensingBottomDeskSSS}>
