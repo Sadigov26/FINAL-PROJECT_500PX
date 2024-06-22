@@ -11,6 +11,9 @@ import CommunityHome from '../../components/CommunityHome/CommunityHome'
 import Footer from '../../components/Footer/Footer'
 
 const Home = () => {
+
+    
+
     return (
         <div>
             <Header />

@@ -58,8 +58,8 @@ const Signup = () => {
         }
 
         try {
-            const { data } = await register({ name, email, password });
-            dispatch(setCredentials(data));
+            const data = await register({ name, email, password }).unwrap();
+            dispatch(setCredentials({...data}));
             navigate('/');
             toast.success('Registration successful!');
         } catch (error) {
