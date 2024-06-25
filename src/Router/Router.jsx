@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import Home from '../pages/Home/Home';
 import AwardWinners from '../pages/AwardWinners/AwardWinners';
 import Upgrade from '../pages/Upgrade/Upgrade';
@@ -23,35 +23,44 @@ import QuestsLicensing from '../pages/QuestsLicensing/QuestsLicensing';
 import QuestProductsArchive from '../pages/QuestProductsArchive/QuestProductsArchive';
 import CategoryPhotos from '../pages/CategoryPhotos/CategoryPhotos';
 import Blog from '../pages/Blog/Blog';
+import { useSelector } from 'react-redux';
+import DiscoverFeed from '../pages/Discover/DiscoverFeed';
+import ProfilePage from '../pages/ProfilePage/ProfilePage';
+import LikePhotos from '../pages/LikePhotos/LikePhotos';
 
 const Router = () => {
+  const { userInfo } = useSelector((state) => state.auth);
+
   return (
     <BrowserRouter>
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/awards_winners_2023' element={<AwardWinners />} />
-          <Route path='/upgrade' element={<Upgrade />} />
-          <Route path='/licensing' element={<LicensingDrop />} />
-          <Route path='/quests' element={<Quests />} />
-          <Route path='/quests/licensing' element={<QuestsLicensing />} />
-          <Route path='/quests/archive' element={<QuestProductsArchive />} />
-          <Route path='/licensing/licensing' element={<StockPhotoLicensing />} />
-          <Route path='/licensing/contribute' element={<BecomeAContributor />} />
-          <Route path='/licensing/requirements' element={<SubmissionRequirements />} />
-          <Route path='/licensing/releases' element={<Releases />} />
-          <Route path='/licensing/keywording' element={<ChoosingKeywords />} />
-          <Route path='/licensing/content' element={<ContentTypes />} />
-          <Route path='/licensing/distribution' element={<Lisans />} />
-          <Route path='/grants' element={<CommercialGrants />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/register' element={<Register />} />
-          <Route path='/recover' element={<Recover />} />
-          <Route path='/signup' element={<Signup />} />
-          <Route path='/search' element={<Search />} />
-          <Route path='/discover' element={<Discover />} />
-          <Route path='/blog' element={<Blog />} />
-          <Route path='/category/:categoryName' element={<CategoryPhotos />} />
-        </Routes>
+      <Routes>
+        <Route path='/' element={userInfo ? <Navigate to="/discover" /> : <Home />} />
+        <Route path='/awards_winners_2023' element={<AwardWinners />} />
+        <Route path='/upgrade' element={<Upgrade />} />
+        <Route path='/licensing' element={<LicensingDrop />} />
+        <Route path='/quests' element={<Quests />} />
+        <Route path='/quests/licensing' element={<QuestsLicensing />} />
+        <Route path='/quests/archive' element={<QuestProductsArchive />} />
+        <Route path='/licensing/licensing' element={<StockPhotoLicensing />} />
+        <Route path='/licensing/contribute' element={<BecomeAContributor />} />
+        <Route path='/licensing/requirements' element={<SubmissionRequirements />} />
+        <Route path='/licensing/releases' element={<Releases />} />
+        <Route path='/licensing/keywording' element={<ChoosingKeywords />} />
+        <Route path='/licensing/content' element={<ContentTypes />} />
+        <Route path='/licensing/distribution' element={<Lisans />} />
+        <Route path='/grants' element={<CommercialGrants />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/register' element={<Register />} />
+        <Route path='/recover' element={<Recover />} />
+        <Route path='/signup' element={<Signup />} />
+        <Route path='/search' element={<Search />} />
+        <Route path='/discover' element={<Discover />} />
+        <Route path='/discover/feed' element={<DiscoverFeed />} />
+        <Route path='/blog' element={<Blog />} />
+        <Route path='/profile' element={<ProfilePage />} />
+         <Route path='/like' element={!userInfo ? <Navigate to="/signup" /> : <LikePhotos />} />
+        <Route path='/category/:categoryName' element={<CategoryPhotos />} />
+      </Routes>
     </BrowserRouter>
   );
 };
