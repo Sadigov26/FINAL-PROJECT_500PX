@@ -6,7 +6,7 @@ import Footer from '../../components/Footer/Footer'
 
 const Blog = () => {
     return (
-        <div style={{ width: "100%", gap: "90px", minHeight: "100vh", display: "flex", flexDirection: "column" }}>
+        <div>
             <Header />
             <div>
                 <BlogHero />

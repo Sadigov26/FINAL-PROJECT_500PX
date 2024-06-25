@@ -11,7 +11,7 @@ const ChoosingKeywords = () => {
     };
 
     return (
-        <div style={{ width: "100%", gap: "120px", minHeight: "100vh", display: "flex", flexDirection: "column" }}>
+        <div>
             <Header />
             <div className={styles.LicensingStarting}>
                 <div className={styles.LicensingStartingContainer}>

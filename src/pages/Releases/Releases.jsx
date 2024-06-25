@@ -10,7 +10,7 @@ const Releases = () => {
         sethelpmenu(!menuhelp);
     };
     return (
-        <div style={{ width: "100%", gap: "150px", minHeight: "100vh", display: "flex", flexDirection: "column" }}>
+        <div>
             <Header />
             <div className={styles.LicensingStarting}>
                 <div className={styles.LicensingStartingContainer}>

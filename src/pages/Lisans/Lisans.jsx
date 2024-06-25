@@ -5,7 +5,7 @@ import LicensingStarting from '../../components/LicensingStarting/LicensingStart
 
 const Lisans = () => {
     return (
-        <div style={{ width: "100%",gap:"100px", minHeight: "100vh", display: "flex", flexDirection: "column" }}>
+        <div>
             <Header />
             <LicensingStarting />
             <Footer />

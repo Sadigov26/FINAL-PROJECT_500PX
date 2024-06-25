@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import styles from './Discover.module.scss'; // Import SCSS file
+import styles from './Discover.module.scss';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 
@@ -40,8 +40,13 @@ const Discover = () => {
         <div className={styles.Discover}>
             <Header />
             <div className={styles.DiscoverContainer}>
+                <div className={styles.discoverNavbar}>
+                    <ul>
+                        <li><a href="/discover" style={{ borderBottom: "3px solid #2986F7", fontWeight: "700" }}>Select categories</a></li>
+                        <li><a href="/discover/feed">Feed</a></li>
+                    </ul>
+                </div>
                 <div className={styles.DiscoverContainerTop}>
-                    <h2>Select categories</h2>
                     <p>Customize your feed by choosing up to category that interest you the most</p>
                 </div>
                 <div className={styles.DiscoverContainerBottom}>

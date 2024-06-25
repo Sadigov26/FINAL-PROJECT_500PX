@@ -11,6 +11,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Signup = () => {
     const [name, setName] = useState('');
+    const [surname, setSurname] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
@@ -46,7 +47,10 @@ const Signup = () => {
             toast.error('Name is required');
             return;
         }
-
+        if (!surname) {
+            toast.error('Surame is required');
+            return;
+        }
         if (!password) {
             toast.error('Password is required');
             return;
@@ -58,8 +62,8 @@ const Signup = () => {
         }
 
         try {
-            const data = await register({ name, email, password }).unwrap();
-            dispatch(setCredentials({...data}));
+            const data = await register({ surname, name, email, password }).unwrap();
+            dispatch(setCredentials({ ...data }));
             navigate('/');
             toast.success('Registration successful!');
         } catch (error) {
@@ -68,7 +72,7 @@ const Signup = () => {
     };
 
     return (
-        <div style={{ width: '100%', gap: '80px', minHeight: '100vh', display: 'flex', flexDirection: 'column', backgroundColor: '#F7F8FA' }}>
+        <div >
             <Header />
             <div className={styles.Login}>
                 <ToastContainer position="top-right" />
@@ -95,6 +99,12 @@ const Signup = () => {
                                 <span>Username*</span>
                             </label>
                             <input type="text" name="name" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
+                        </div>
+                        <div className={styles.EmailorUsername}>
+                            <label htmlFor="username">
+                                <span>Surname*</span>
+                            </label>
+                            <input type="text" name="surname" placeholder="Surname" value={surname} onChange={(e) => setSurname(e.target.value)} />
                         </div>
                         <div className={styles.EmailorUsername}>
                             <label htmlFor="password">

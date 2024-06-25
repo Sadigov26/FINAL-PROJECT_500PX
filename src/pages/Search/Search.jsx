@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import Masonry from 'react-masonry-css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
-import styles from './Search.module.scss';
+import { faHeart, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import Masonry from 'react-masonry-css';
 import Header from '../../components/Header/Header';
-import neww from '../../about/image copy 32.png';
 import ModalImg from '../../components/Modal/ModalImg';
+import { useDispatch, useSelector } from 'react-redux';
+import { useAddPhotoMutation } from '../../redux/slices/photoApiSlice';
+import styles from './Search.module.scss';
+import neww from '../../about/image copy 32.png';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Search = () => {
     const [images, setImages] = useState([]);
@@ -18,6 +22,10 @@ const Search = () => {
     const [selectedImage, setSelectedImage] = useState(null);
     const [query, setQuery] = useState(new URLSearchParams(location.search).get('query') || '');
     const apiKey = '636e1481b4f3c446d26b8eb6ebfe7127';
+    const [favoritePhotos, setFavoritePhotos] = useState([]);
+    const { userInfo } = useSelector((state) => state.auth);
+    const dispatch = useDispatch();
+    const [addPhoto] = useAddPhotoMutation();
 
     useEffect(() => {
         if (query) {
@@ -43,7 +51,7 @@ const Search = () => {
                 setLoading(false);
             });
     };
-
+    const navigation = useNavigate()
     const handleSearch = () => {
         if (query.trim()) {
             navigate(`/search?query=${encodeURIComponent(query)}`);
@@ -62,13 +70,13 @@ const Search = () => {
     useEffect(() => {
         const handleScroll = () => {
             if (
-                window.innerHeight + document.documentElement.scrollTop >= document.documentElement.offsetHeight - 100
-                && !loading
+                window.innerHeight + document.documentElement.scrollTop >= document.documentElement.offsetHeight - 700 &&
+                !loading
             ) {
                 setPage((prevPage) => prevPage + 1);
             }
         };
-        
+
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, [loading]);
@@ -90,8 +98,37 @@ const Search = () => {
         setSelectedImage(null);
     };
 
+    const handleAddPhoto = async (imageUrl) => {
+        if (favoritePhotos.includes(imageUrl)) {
+            toast.error('This photo is already in favorites!', {
+                position: 'top-right',
+                autoClose: 3000,
+            });
+            return;
+        }
+
+        try {
+            const newPhoto = await addPhoto({
+                imageUrl,
+            }).unwrap();
+            dispatch({ type: 'photo/addPhoto', payload: newPhoto });
+            setFavoritePhotos((prevPhotos) => [...prevPhotos, imageUrl]);
+
+            toast.success('Photo added to favorites!', {
+                position: 'top-right',
+                autoClose: 3000,
+            });
+        } catch (err) {
+            console.error('Failed to add the photo:', err);
+            toast.error('Failed to add photo. Please try again later.', {
+                position: 'top-right',
+                autoClose: 3000,
+            });
+        }
+    };
+
     return (
-        <div style={{ width: "100%", gap: "80px", minHeight: "100vh", display: "flex", flexDirection: "column" }}>
+        <div>
             <Header hideSearch={true} />
             <div className={styles.search}>
                 <div className={styles.searchBar}>
@@ -112,6 +149,7 @@ const Search = () => {
                     </div>
                 </div>
                 <h2>Search Results for "{query}"</h2>
+
                 {loading && page === 1 ? (
                     <div className={styles.spinnerContainer}>
                         <div className={styles.spinner}></div>
@@ -133,11 +171,33 @@ const Search = () => {
                         columnClassName={styles.myMasonryGridColumn}
                     >
                         {images.map((image) => (
-                            <div className={styles.imageContainer} key={image.id} onClick={() => openModal(`https://farm${image.farm}.staticflickr.com/${image.server}/${image.id}_${image.secret}_b.jpg`)}>
+                            <div
+                                className={styles.imageContainer}
+                                key={image.id}
+                            >
                                 <img
+                                    onClick={() =>
+                                        openModal(
+                                            `https://farm${image.farm}.staticflickr.com/${image.server}/${image.id}_${image.secret}_b.jpg`
+                                        )
+                                    }
                                     src={`https://farm${image.farm}.staticflickr.com/${image.server}/${image.id}_${image.secret}_m.jpg`}
                                     alt={image.title}
                                 />
+                                {userInfo && <button
+                                    className={styles.addButton}
+                                    onClick={() =>
+                                        handleAddPhoto(
+                                            `https://farm${image.farm}.staticflickr.com/${image.server}/${image.id}_${image.secret}_b.jpg`
+                                        )
+                                    }
+                                >
+                                    <FontAwesomeIcon icon={faHeart} style={{ fontSize: "17px" }} />
+                                </button>}
+                                {!userInfo &&
+                                    <button  className={styles.addButton} onClick={() => navigation("/register")}>
+                                        <FontAwesomeIcon icon={faHeart} style={{ fontSize: "17px" }} />
+                                    </button>}
                             </div>
                         ))}
                     </Masonry>

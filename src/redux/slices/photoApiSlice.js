@@ -1,30 +1,29 @@
 import { apiSlice } from './apiSlice';
 
-const USER_URL = '/api/users';
+const USER_URL = '/api/photos';
 
 export const photoApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
-    login: builder.query({
-      query: (data) => ({
-        url: `${USER_URL}/login`,
-        method:"POST",
-        body:data,
+    getPhotos: builder.query({
+      query: () => ({
+        url: `${USER_URL}/`,
+        method: 'GET',
       }),
     }),
-    register: builder.mutation({
-      query: (data) => ({
-        url: `${USER_URL}/signup`,
+    addPhoto: builder.mutation({
+      query: (photo) => ({
+        url: `${USER_URL}/`,
         method: 'POST',
-        body: data,
+        body: photo,
       }),
     }),
-    logout: builder.mutation({
+    deletePhoto: builder.mutation({
       query: (id) => ({
-        url: `${USER_URL}/logout`,
+        url: `${USER_URL}/${id}`,
         method: 'DELETE',
       }),
     }),
   }),
 });
 
-export const { useLoginQuery,useLogoutMutation,useRegisterMutation } = photoApiSlice;
+export const { useDeletePhotoMutation, useAddPhotoMutation, useGetPhotosQuery } = photoApiSlice;

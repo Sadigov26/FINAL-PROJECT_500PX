@@ -1,12 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+const initialState = {
+  userPhotos: [],
+};
+
 const photoSlice = createSlice({
   name: 'photo',
-  initialState: {
-    userPhotos: [],
-  },
+  initialState,
   reducers: {
-    setPhoto: (state, action) => {
+    setPhotos: (state, action) => {
       state.userPhotos = action.payload;
     },
     addPhoto: (state, action) => {
@@ -18,6 +20,5 @@ const photoSlice = createSlice({
   },
 });
 
-export const {addPhoto,setPhoto,removePhoto } = photoSlice.actions;
-
+export const { addPhoto, setPhotos, removePhoto } = photoSlice.actions;
 export default photoSlice.reducer;

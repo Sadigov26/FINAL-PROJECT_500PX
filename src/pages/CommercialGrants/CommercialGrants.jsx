@@ -5,7 +5,7 @@ import Grants from '../../components/Grants/Grants'
 
 const CommercialGrants = () => {
     return (
-        <div style={{ width: "100%", gap: "80px", minHeight: "100vh", display: "flex", flexDirection: "column" }}>
+        <div>
             <Header />
             <Grants/>
             <Footer />

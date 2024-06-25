@@ -5,7 +5,7 @@ import Footer from '../../components/Footer/Footer';
 
 const Recover = () => {
     return (
-        <div style={{ width: "100%", gap: "80px", minHeight: "100vh", display: "flex", flexDirection: "column", backgroundColor: "#F7F8FA" }}>
+        <div>
             <Header />
             <div className={styles.Login}>
                 <div className={styles.LoginContainer}>
