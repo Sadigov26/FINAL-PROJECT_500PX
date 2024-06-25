@@ -246,16 +246,17 @@
         .FeaturePlansContainer {
             display: flex;
             border: 1px solid rgb(209, 206, 206);
-            padding: 10px;
+            padding: 15px;
             align-items: center;
             justify-content: center;
             flex-direction: column;
             gap: 10px;
 
             .FeaturePlansContainerTop {
-                width: 60%;
+                width: 100%;
                 display: flex;
                 align-items: start;
+                text-align: center;
 
                 h2 {
                     font-size: 24px;
@@ -279,7 +280,7 @@
                 }
 
                 .RightPlans {
-                    width: 40%;
+                    width: 50%;
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
@@ -299,9 +300,10 @@
 
 @media screen and (min-width:280px)and (max-width:860px) {
     .ComparePlans {
-        .FeaturePlansContainer{
+        .FeaturePlansContainer {
             width: 95%;
         }
+
         .ComparePlansContainerBottom {
             flex-direction: column;
 

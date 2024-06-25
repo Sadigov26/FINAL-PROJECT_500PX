@@ -37,7 +37,8 @@ $footer-text-color: #343a40;
                 flex-direction: column;
                 width: 80%;
 
-                .FooterNavbar , .FooterNavbarLic {
+                .FooterNavbar,
+                .FooterNavbarLic {
                     flex: 1;
                     margin-right: 20px;
                     gap: 20px;
@@ -97,11 +98,10 @@ $footer-text-color: #343a40;
                             width: 100%;
                             height: 45px;
                         }
-                        
+
                         a {
                             display: block;
                             width: 150px
-                            
                         }
                     }
                 }
@@ -115,15 +115,22 @@ $footer-text-color: #343a40;
                 margin-top: 20px;
                 border-top: 1px solid rgba(109, 115, 120, 0.609);
 
+                p {
+                    cursor: pointer;
+                }
+
                 .FooterContainerLeft {
-                    h1 {
-                        margin-top: 20px;
+                    margin-top: 20px;
+
+                    h2 {
                         color: rgb(109, 115, 120);
                         font-size: 22px;
                     }
                 }
 
                 .FooterContainerRight {
+                    margin-top: 20px;
+
                     ul {
                         display: flex;
                         gap: 20px;
@@ -149,9 +156,10 @@ $footer-text-color: #343a40;
         .FooterContainerLarge {
             .FooterContainer {
                 .NavContainer {
-                    .FooterNavbarLic{
+                    .FooterNavbarLic {
                         display: none;
                     }
+
                     flex-direction: column;
                     width: 90%;
                 }

@@ -62,7 +62,7 @@ const Footer = () => {
                         </div>
                         <div className={styles.FooterContainerBottom}>
                             <div className={styles.FooterContainerLeft}>
-                                <h1>© 500px</h1>
+                                <h2>© 500px</h2>
                             </div>
                             <div className={styles.FooterContainerRight}>
                                 <ul>
@@ -71,6 +71,9 @@ const Footer = () => {
                                     <li><a href="https://support.500px.com/hc/en-us" target='blank'>Support</a></li>
                                 </ul>
                             </div>
+                        </div>
+                        <div className={styles.FooterContainerBottom} >
+                            <p style={{paddingTop:"20px"}}>The site was created by <span style={{fontWeight:"bold"}}>Sadigov Kamil</span></p>
                         </div>
                     </div>
                 </div>

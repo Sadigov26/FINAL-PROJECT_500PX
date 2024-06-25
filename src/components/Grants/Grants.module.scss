@@ -584,7 +584,7 @@
 
                 h2 {
                     color: #027A95;
-                    font-size: 60px;
+                    font-size: 40px;
                 }
             }
 
@@ -683,7 +683,7 @@
                 }
             }
 
-            .GrantsFiveContainerBottomRight {
+            .GrantsNineContainerBottomRight {
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -836,6 +836,8 @@
             }
         }
 
+        
+
         .GrantsThreeContainerMiddle {
             flex-direction: column;
 
@@ -849,12 +851,14 @@
             padding-bottom: 50px;
 
         }
-.GrantsFiveContainerBottomRight,
+
+        .GrantsFiveContainerBottomRight,
         .GrantsSevenContainerMiddle,
         .GrantsFiveContainerMiddle {
             flex-direction: column;
         }
-.GrantsTenContainerMiddle,
+
+        .GrantsTenContainerMiddle,
         .GrantsNineContainerBottom,
         .GrantsNineContainerMiddle,
         .GrantsEightContainerMiddle,

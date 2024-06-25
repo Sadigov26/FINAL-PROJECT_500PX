@@ -47,7 +47,7 @@ const AwardHero = () => {
                     </div>
                 </div>
                 <div className={styles.CategoryWinners}>
-                    <h1>Category Winners</h1>
+                    <h2>Category Winners</h2>
                     <div className={styles.CategoryWinnersButons}>
                         <div className={styles.CategoryBtns} style={{ backgroundColor: "#6F9EDC" }}>
                             <h3>Landscape</h3>
@@ -72,7 +72,7 @@ const AwardHero = () => {
                 </div>
                 <div className={styles.PhotographersoftheYear}>
                     <div className={styles.PhotographersoftheYearTop}>
-                        <h1 style={{ display: "flex", alignItems: "center", gap: "10px" }}><TfiCup style={{ color: "#FF9900" }} /> 500px Photographers of the Year</h1>
+                        <h2 style={{ display: "flex", alignItems: "center", gap: "10px" }}><TfiCup style={{ color: "#FF9900" }} /> 500px Photographers of the Year</h2>
                     </div>
                     <div className={styles.PhotographersoftheYearBotom}>
                         <div className={styles.PhotographersoftheYearBotomImg}>
@@ -81,7 +81,7 @@ const AwardHero = () => {
                         <div className={styles.PhotographersoftheYearBotomDesk}>
                             <h4>500px Photographer of the Year</h4>
                             <h5>Pro</h5>
-                            <h1>Serhii Fett</h1>
+                            <h2>Serhii Fett</h2>
                             <p>A frame within a frame within a frame. There are many layers to Serhii’s image—the deep, dark entry, which lacks detail with its extreme shadows, guides you to a staircase where light pours in, and then back to the darkness, contrasted with a bold sliver of a silhouette. Every decision is intentional in this captivating frame.</p>
                             <button>View profile</button>
                         </div>
@@ -90,7 +90,7 @@ const AwardHero = () => {
                         <div className={styles.PhotographersoftheYearBotomDesk}>
                             <h4>500px Photographer of the Year</h4>
                             <h5>Pro</h5>
-                            <h1>Serhii Fett</h1>
+                            <h2>Serhii Fett</h2>
                             <p>A frame within a frame within a frame. There are many layers to Serhii’s image—the deep, dark entry, which lacks detail with its extreme shadows, guides you to a staircase where light pours in, and then back to the darkness, contrasted with a bold sliver of a silhouette. Every decision is intentional in this captivating frame.</p>
                             <button>View profile</button>
                         </div>

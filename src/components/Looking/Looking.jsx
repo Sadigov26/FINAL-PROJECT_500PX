@@ -31,7 +31,7 @@ const Looking = () => {
                     </div>
                     <div className={styles.whatMakesUsDifferent}>
                         <div className={styles.whatMakesUsDifferentTop}>
-                            <h1>What makes us different</h1>
+                            <h2>What makes us different</h2>
                         </div>
                         <div className={styles.whatMakesUsDifferentBottom}>
                             <div className={styles.whatMakesUsDifferentBottomCard}>
@@ -102,7 +102,7 @@ const Looking = () => {
                     <div className={styles.getTheApp}>
                         <div className={styles.getTheAppLeft}>
                             <div className={styles.getTheAppLeftDesk}>
-                                <h1>Get the app</h1>
+                                <h2>Get the app</h2>
                                 <p>Join our community of over 16 million like-minded photographers. Download the 500px app for Android and iOS today!</p>
                             </div>
                             <div className={styles.getTheAppStore}>
