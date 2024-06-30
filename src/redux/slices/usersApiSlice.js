@@ -31,7 +31,6 @@ export const userApiSlice = apiSlice.injectEndpoints({
         body: data
       })
     }),
-
     getUserProfile: builder.query({
       query: () => ({
         url: `${USERS_URL}/profile`,
@@ -51,7 +50,7 @@ export const userApiSlice = apiSlice.injectEndpoints({
       })
     }),
     updateUserByAdmin: builder.mutation({
-      query: ({ id ,...data}) => ({
+      query: ({ id, ...data }) => ({
         url: `${USERS_URL}/all/${id}`,
         method: 'PUT',
         body: data,
@@ -60,11 +59,10 @@ export const userApiSlice = apiSlice.injectEndpoints({
     forgotPassword: builder.mutation({
       query: (data) => ({
         url: `${USERS_URL}/forgot-password`,
-        method: "POST",
+        method: 'POST',
         body: data,
       }),
     }),
-
     sendVerificationEmail: builder.mutation({
       query: (data) => ({
         url: '/api/send-verification-email',
@@ -72,7 +70,25 @@ export const userApiSlice = apiSlice.injectEndpoints({
         body: data,
       }),
     }),
+    confirmEmail: builder.mutation({
+      query: ({ email, code }) => ({
+        url: `${USERS_URL}/confirm`,
+        method: 'POST',
+        body: { email, code },
+      }),
+    }),
   }),
 });
 
-export const { useUpdateUserByAdminMutation, useDeleteUserMutation, useGetAllUsersQuery, useLoginMutation, useSendVerificationEmailMutation, useLogoutMutation, useRegisterMutation, useUpdateUserMutation, useGetUserProfileQuery } = userApiSlice;
+export const {
+  useUpdateUserByAdminMutation,
+  useDeleteUserMutation,
+  useGetAllUsersQuery,
+  useLoginMutation,
+  useSendVerificationEmailMutation,
+  useLogoutMutation,
+  useRegisterMutation,
+  useUpdateUserMutation,
+  useGetUserProfileQuery,
+  useConfirmEmailMutation, // Add this hook for confirming email
+} = userApiSlice;

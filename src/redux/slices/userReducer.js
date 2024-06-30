@@ -1,30 +1,28 @@
-// Example of usersReducer
-import { createSlice } from '@reduxjs/toolkit';
+// uploadReducer.js
 
 const initialState = {
-    users: [], // Ensure users is initialized as an empty array
-    loading: false,
-    error: null
-};
-
-const usersSlice = createSlice({
-    name: 'users',
-    initialState,
-    reducers: {
-        fetchUsersStart(state) {
-            state.loading = true;
-            state.error = null;
-        },
-        fetchUsersSuccess(state, action) {
-            state.loading = false;
-            state.users = action.payload; // Assuming action.payload is an array of users
-        },
-        fetchUsersFailure(state, action) {
-            state.loading = false;
-            state.error = action.payload; // Assuming action.payload contains error information
-        }
+    message: '',
+    error: null,
+  };
+  
+  const uploadReducer = (state = initialState, action) => {
+    switch (action.type) {
+      case 'UPLOAD_SUCCESS':
+        return {
+          ...state,
+          message: action.payload.message,
+          error: null,
+        };
+      case 'UPLOAD_FAILURE':
+        return {
+          ...state,
+          message: '',
+          error: action.payload,
+        };
+      default:
+        return state;
     }
-});
-
-export const { fetchUsersStart, fetchUsersSuccess, fetchUsersFailure } = usersSlice.actions;
-export default usersSlice.reducer;
+  };
+  
+  export default uploadReducer;
+  

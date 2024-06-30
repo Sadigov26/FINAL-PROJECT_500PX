@@ -28,7 +28,6 @@ import Blog from '../pages/Blog/Blog';
 import DiscoverFeed from '../pages/Discover/DiscoverFeed';
 import ProfilePage from '../pages/ProfilePage/ProfilePage';
 import LikePhotos from '../pages/LikePhotos/LikePhotos';
-import ImageUploadForm from '../pages/ImageUploadForm/ImageUploadForm';
 
 const AppRouter = () => {
   const { userInfo } = useSelector((state) => state.auth);
@@ -45,7 +44,6 @@ const AppRouter = () => {
         )}
         <Route path="/awards_winners_2023" element={<AwardWinners />} />
         <Route path="/upgrade" element={<Upgrade />} />
-        <Route path="/upload" element={<ImageUploadForm />} />
         <Route path="/licensing" element={<LicensingDrop />} />
         <Route path="/quests" element={<Quests />} />
         <Route path="/quests/licensing" element={<QuestsLicensing />} />

@@ -32,7 +32,7 @@ const SubmissionRequirements = () => {
                     <div className={styles.LicensingStartingContainerTop}>
                         <h2>500px Licensing: Get Started</h2>
                         <p>Easily license your photos for stock usage through 500px. It's quick to setup and completely optional for all membership levels.</p>
-                    </div>.
+                    </div>
                     <li style={{ listStyle: "none" }}><a onClick={helpmenu} className={styles.TableContents}>Table of Content
                         <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd"
