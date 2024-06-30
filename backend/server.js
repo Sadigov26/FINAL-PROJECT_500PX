@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import connectDB from './config/db.js';
 import userRouter from './routes/userRouter.js';
 import photoRouter from './routes/photoRouter.js';
+import imageRouter from './routes/photoRouter.js';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 
@@ -22,5 +23,6 @@ connectDB();
 
 app.use('/api/users', userRouter);
 app.use('/api/photos', photoRouter);
+app.use('/api/upload', imageRouter);
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

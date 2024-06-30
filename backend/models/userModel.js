@@ -16,29 +16,30 @@ const userSchema = mongoose.Schema(
       required: true,
       unique: true,
     },
-
     password: {
       type: String,
       required: true,
-      select: false,
     },
-    profileImage: {
-      type: String,
+
+    isAdmin: {
+      type: Boolean,
+      default: false,
     },
+    image: { type: String }
+    
   },
-  {
-    timestamps: true,
-  }
+  { timestamps: true }
 );
 
 userSchema.pre('save', async function (next) {
   if (!this.isModified('password')) {
-    next();
+    next()
   }
 
   const salt = await bcrypt.genSalt(10);
-  this.password = await bcrypt.hash(this.password, salt);
-});
+
+  this.password = await bcrypt.hash(this.password, salt)
+})
 
 userSchema.methods.parolaKontrol = async function (girilenParola) {
   return await bcrypt.compare(girilenParola, this.password);
