@@ -4,7 +4,6 @@ import Modal from '../Modal/Modal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass, faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
-import { faCloudArrowUp } from '@fortawesome/free-solid-svg-icons';
 import { TbAntennaBars1 } from 'react-icons/tb';
 import { FaBars, FaRegCompass } from 'react-icons/fa6';
 import { FaRegUserCircle } from 'react-icons/fa';
@@ -187,9 +186,7 @@ const Header = ({ hideSearch }) => {
             <a style={{ color: "#fcfbf7", fontSize: "19px" }} href="/discover"><FaRegCompass /></a>
             <a style={{ color: "#fcfbf7", fontSize: "19px" }} href="/like"><FontAwesomeIcon icon={faHeart} style={{ fontSize: "17px" }} /></a>
             <a style={{ color: "#fcfbf7", fontSize: "19px" }} href="/quests"><BsRocketTakeoffFill /></a>
-            {userInfo &&
-            <a style={{ color: "#fcfbf7", fontSize: "19px" }} href="">   <FontAwesomeIcon icon={faCloudArrowUp} /></a>
-            }{!userInfo &&
+           {!userInfo &&
             <a style={{ color: "#fcfbf7", fontSize: "19px" }} href="/login"><FaRegUserCircle /></a>
             }
             {userInfo &&
