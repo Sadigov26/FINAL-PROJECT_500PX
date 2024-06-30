@@ -1,0 +1,96 @@
+.Licensing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+    width: 100%;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('../../about/header_image.394b1172.jpg');
+    background-position: center;
+    background-size: cover;
+
+    .LicensingContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 85%;
+
+        .LicensingContainerText {
+            display: flex;
+            justify-content: start;
+            align-items: start;
+            flex-direction: column;
+            width: 100%;
+
+            a {
+                margin-top: 16px;
+                padding: 20px 32px;
+                background: #1d53c7;
+                color: white;
+                font-size: 24px;
+                width: 216px;
+                border-radius: 50px;
+                text-align: center;
+                text-decoration: none;
+                font-weight: 700;
+
+                &:hover {
+                    background: #ccc;
+                    cursor: pointer;
+                }
+            }
+
+            .desc {
+                font-size: 16px;
+                color: #000000;
+                width: 38%;
+                line-height: 1.2;
+            }
+
+            .bigTitle {
+                font-size: 48px;
+                font-weight: 600;
+                color: #000000;
+                width: 600px;
+                margin-bottom: 15px;
+            }
+        }
+    }
+
+    .svgwavestop {
+        width: 100%;
+        height: auto;
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+    }
+}
+
+@media screen and (min-width:280px)and (max-width:860px) {
+    .Licensing {
+        .LicensingContainer {
+            width: 100%;
+
+            .LicensingContainerText {
+                width: 90%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                .bigTitle {
+                    width: 100%;
+                    font-size: 38px;
+
+                }
+                .desc{
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+}

@@ -1,0 +1,52 @@
+.CommunityHome {
+    background-color: #45457C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+
+    .CommunityHomeContainer {
+        display: flex;
+        width: 60%;
+        text-align: center;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        h2 {
+            font-size: 40px;
+            font-weight: 700;
+            color: white;
+
+        }
+
+        p {
+            font-size: 21px;
+            font-weight: 400;
+            color: white;
+        }
+
+        button {
+            font-size: 33px;
+            font-weight: 600;
+            border-radius: 100px;
+            border: none;
+            padding: 15px 75px;
+            color: black;
+            background-color: white;
+        }
+    }
+}
+@media screen and (min-width:280px)and (max-width:860px) {
+    .CommunityHome {
+        .CommunityHomeContainer {
+            width: 90%;
+
+            button {
+                width: 100%;
+            }
+        }
+    }
+
+}

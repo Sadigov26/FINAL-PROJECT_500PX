@@ -1,0 +1,189 @@
+.LicensingStarting {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+padding-bottom: 20px;
+    .LicensingStartingContainer {
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        width: 70%;
+        flex-direction: column;
+        gap: 20px;
+
+        .TableContents {
+            display: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .licensingg {
+
+            a {
+                width: 100%;
+                padding: 10px;
+                text-decoration: none;
+                color: black;
+                font-size: 18px;
+                font-size: 400;
+                display: block;
+                padding: 10px;
+                text-decoration: none;
+                color: black;
+                border-left: 3px solid #fff;
+                font-weight: 500;
+
+                &:hover {
+                    border-left: 3px solid #2986F7;
+                    background-color: #F7F8FA;
+                }
+            }
+        }
+
+
+        .LicensingStartingContainerTop {
+            width: 100%;
+            text-align: start;
+            display: flex;
+            align-items: start;
+            justify-content: center;
+            flex-direction: column;
+            gap: 15px;
+
+            h2 {
+                font-size: 48px;
+            }
+
+            p {
+                font-size: 24px;
+            }
+        }
+
+        .LicensingStartingContainerBottom {
+            display: flex;
+            align-items: start;
+            width: 100%;
+            justify-content: center;
+            gap: 20px;
+
+            .LicensingBottomNavbar {
+                width: 26%;
+                text-align: start;
+                flex-direction: column;
+                display: flex;
+                align-items: start;
+                justify-content: center;
+                gap: 10px;
+
+
+
+                a {
+                    width: 100%;
+                    padding: 10px;
+                    text-decoration: none;
+                    color: black;
+                    font-size: 18px;
+                    font-size: 400;
+                    display: block;
+                    padding: 10px;
+                    text-decoration: none;
+                    color: black;
+                    border-left: 3px solid #fff;
+                    font-weight: 500;
+
+                    &:hover {
+                        border-left: 3px solid #2986F7;
+                        background-color: #F7F8FA;
+                    }
+                }
+            }
+
+            .LicensingBottomDesk,
+            .Distribution,
+            .section {
+                width: 80%;
+                text-align: start;
+                gap: 15px;
+                flex-direction: column;
+                display: flex;
+                align-items: start;
+                justify-content: center;
+
+                h2 {
+                    font-size: 40px;
+                }
+
+                p {
+                    font-size: 18px;
+                }
+
+                h3 {
+                    font-size: 25px;
+                }
+
+                a {
+                    color: #2995F9;
+                    text-decoration: none;
+                }
+
+                .LicensingBottomDeskSSS {
+                    gap: 15px;
+
+                    li {
+                        padding-left: 20px;
+                    }
+
+                    flex-direction: column;
+                    display: flex;
+                    align-items: start;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+}
+
+
+
+.activeBold {
+    border-left: 3px solid #2986F7;
+    background-color: #F7F8FA;
+    font-weight: bold;
+
+}
+
+@media screen and (min-width:280px)and (max-width:860px) {
+    .LicensingStarting {
+        .LicensingStartingContainer {
+            .LicensingStartingContainerTop {
+                display: none;
+            }
+
+            .TableContents {
+                display: block;
+            }
+
+            .LicensingStartingContainerBottom {
+                .LicensingBottomNavbar {
+                    display: none;
+                }
+
+                .LicensingBottomDesk {
+                    width: 100%;
+
+                    .LicensingBottomDeskSSS {
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+
+
+}
