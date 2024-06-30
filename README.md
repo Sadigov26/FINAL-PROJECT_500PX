@@ -28,9 +28,18 @@ Bu repo, 500PX adlı bir proje için hem frontend hem de backend kodlarını iç
 
 500PX'yi yerel makinenizde çalıştırmak için aşağıdaki adımları izleyin.
 
+
+### frontend Kurulumu
+
+1. `frontend` dizinine gidin ve gerekli bağımlılıkları yükleyin:
+
+   ```bash
+   cd frontend
+   npm install
+
 ### Backend Kurulumu
 
-1. `backend` dizinine gidin ve gerekli bağımlılıkları yükleyin:
+2. `backend` dizinine gidin ve gerekli bağımlılıkları yükleyin:
 
    ```bash
    cd backend
