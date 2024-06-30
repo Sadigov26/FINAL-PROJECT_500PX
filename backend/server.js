@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 5000;
 
 app.use(express.json());
 app.use(cors({
-    origin: 'https://500px-eight.vercel.app/', 
+    origin: 'http://localhost:3000', 
     credentials: true,
 }));
 app.use(express.urlencoded({ extended: true }));
