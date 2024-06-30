@@ -5,7 +5,7 @@ import Footer from '../../components/Footer/Footer';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCredentials } from '../../redux/slices/authSlice';
 import { useNavigate, Link } from 'react-router-dom';
-import { useRegisterMutation, useSendVerificationEmailMutation } from '../../redux/slices/usersApiSlice.js';
+import { useRegisterMutation, useSendVerificationEmailMutation, useConfirmEmailMutation } from '../../redux/slices/usersApiSlice';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -15,16 +15,20 @@ const Signup = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
+    const [verificationCode, setVerificationCode] = useState('');
+    const [showModal, setShowModal] = useState(false);
+
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
     const { userInfo } = useSelector((state) => state.auth);
     const [register, { isLoading: isRegistering }] = useRegisterMutation();
     const [sendVerificationEmail, { isLoading: isSendingEmail }] = useSendVerificationEmailMutation();
+    const [confirmEmail, { isLoading: isConfirmingEmail }] = useConfirmEmailMutation();
 
     useEffect(() => {
         if (userInfo) {
-            navigate('/');
+            navigate('/confirm');
         }
     }, [navigate, userInfo]);
 
@@ -63,17 +67,31 @@ const Signup = () => {
         }
 
         try {
-            // Kullanıcı kaydını yap
+            // Register user
             const data = await register({ surname, name, email, password }).unwrap();
             dispatch(setCredentials({ ...data }));
 
-            // E-posta doğrulama kodu gönder
-            await sendVerificationEmail(email);
+            // Send verification email
+            await sendVerificationEmail({ email });
 
-            navigate('/');
-            toast.success('Registration successful! ');
+            // Show modal for verification code
+            setShowModal(true);
         } catch (error) {
             toast.error(`Registration failed: ${error.data?.message || error.message}`);
+        }
+    };
+
+    const handleVerifyEmail = async (e) => {
+        e.preventDefault();
+
+        try {
+            await confirmEmail({ email, code: verificationCode }).unwrap();
+            toast.success('Email successfully verified!');
+            setShowModal(false);
+            navigate('/confirm');
+        } catch (error) {
+            toast.error(`Verification failed: ${error.data?.message || error.message}`);
+            setShowModal(false); // Close the modal
         }
     };
 
@@ -153,6 +171,27 @@ const Signup = () => {
                 </div>
             </div>
             <Footer />
+
+            {showModal && (
+                <div className={styles.modal}>
+                    <div className={styles.modalContent}>
+                        <h2>Email Verification</h2>
+                        <form onSubmit={handleVerifyEmail}>
+                            <label htmlFor="verificationCode">Enter Verification Code</label>
+                            <input
+                                type="text"
+                                name="verificationCode"
+                                value={verificationCode}
+                                onChange={(e) => setVerificationCode(e.target.value)}
+                                required
+                            />
+                            <button type="submit" disabled={isConfirmingEmail}>
+                                {isConfirmingEmail ? 'Verifying...' : 'Verify Email'}
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };

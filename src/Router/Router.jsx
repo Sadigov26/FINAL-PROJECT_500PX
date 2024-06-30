@@ -28,6 +28,7 @@ import Blog from '../pages/Blog/Blog';
 import DiscoverFeed from '../pages/Discover/DiscoverFeed';
 import ProfilePage from '../pages/ProfilePage/ProfilePage';
 import LikePhotos from '../pages/LikePhotos/LikePhotos';
+import EmailVerification from '../pages/Signup/EmailVerification';
 
 const AppRouter = () => {
   const { userInfo } = useSelector((state) => state.auth);
@@ -67,6 +68,7 @@ const AppRouter = () => {
         <Route path="/like" element={!userInfo ? <Navigate to="/signup" /> : <LikePhotos />} />
         <Route path="/category/:categoryName" element={<CategoryPhotos />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/confirm" element={<EmailVerification />} />
       </Routes>
     </Router>
   );

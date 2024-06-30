@@ -21,8 +21,22 @@ export const userApiSlice = apiSlice.injectEndpoints({
       query: (data) => ({
         url: `${USERS_URL}/signup`,
         method: 'POST',
-        body: data
-      })
+        body: data,
+      }),
+    }),
+    sendVerificationEmail: builder.mutation({
+      query: (data) => ({
+        url: `${USERS_URL}/send-verification-email`,
+        method: 'POST',
+        body: data,
+      }),
+    }),
+    confirmEmail: builder.mutation({
+      query: (data) => ({
+        url: `${USERS_URL}/confirm`,
+        method: 'POST',
+        body: data,
+      }),
     }),
     updateUser: builder.mutation({
       query: (data) => ({
@@ -63,20 +77,6 @@ export const userApiSlice = apiSlice.injectEndpoints({
         body: data,
       }),
     }),
-    sendVerificationEmail: builder.mutation({
-      query: (data) => ({
-        url: '/api/send-verification-email',
-        method: 'POST',
-        body: data,
-      }),
-    }),
-    confirmEmail: builder.mutation({
-      query: ({ email, code }) => ({
-        url: `${USERS_URL}/confirm`,
-        method: 'POST',
-        body: { email, code },
-      }),
-    }),
   }),
 });
 
@@ -86,9 +86,9 @@ export const {
   useGetAllUsersQuery,
   useLoginMutation,
   useSendVerificationEmailMutation,
+  useConfirmEmailMutation,
   useLogoutMutation,
   useRegisterMutation,
   useUpdateUserMutation,
   useGetUserProfileQuery,
-  useConfirmEmailMutation, // Add this hook for confirming email
 } = userApiSlice;
