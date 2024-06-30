@@ -190,6 +190,7 @@ const loginUser = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+
 const logoutUser = async (req, res) => {
   try {
     res.clearCookie('jwt'); // Assuming you use cookies for token storage
@@ -198,6 +199,7 @@ const logoutUser = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+
 const getUserProfile = async (req, res) => {
   try {
     const user = await User.findById(req.user._id);
@@ -216,6 +218,7 @@ const getUserProfile = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+
 const updateUserProfile = async (req, res) => {
   try {
     const user = await User.findById(req.user._id);
@@ -244,6 +247,7 @@ const updateUserProfile = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+
 const getAllUsers = async (req, res) => {
   try {
     const users = await User.find({});
@@ -252,6 +256,7 @@ const getAllUsers = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+
 const deleteUsers = async (req, res) => {
   try {
     const userId = req.params.id;
@@ -265,6 +270,7 @@ const deleteUsers = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+
 const updateUserProfileByAdmin = async (req, res) => {
   try {
     const userId = req.params.id;

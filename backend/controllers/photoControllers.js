@@ -1,20 +1,18 @@
 import Photo from "../models/photoModel.js";
-
 const addUserPhoto = async (req, res) => {
     try {
-        const { imageUrl, description } = req.body;
-
-        if (req.user) {
-            const photo = await Photo.create({
-                imageUrl,
-                description,
-                user_id: req.user._id,
-            });
-
-            res.status(201).json({ photo });
-        } else {
-            res.status(404).json({ message: 'User not found' });
+        if (!req.user) {
+            return res.status(401).json({ message: 'Unauthorized: User not authenticated' });
         }
+
+        const { imageUrl, description } = req.body;
+        const photo = await Photo.create({
+            imageUrl,
+            description,
+            user_id: req.user._id,
+        });
+
+        res.status(201).json({ photo });
     } catch (error) {
         res.status(500).json({ message: error.message });
     }

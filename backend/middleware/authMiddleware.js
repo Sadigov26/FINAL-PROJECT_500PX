@@ -1,6 +1,5 @@
 import jwt from 'jsonwebtoken';
 import User from '../models/userModel.js';
-import asyncHandler from 'express-async-handler';
 
 const userAuth = async (req, res, next) => {
   let token;
@@ -23,11 +22,5 @@ const userAuth = async (req, res, next) => {
   }
 };
 
-const superAdminKontrol = asyncHandler(async (req, res, next) => {
-  if (req.user && req.user.isSuperAdmin) {
-    next();
-  } else {
-    res.status(401).json({ message: 'Yetkisiz giriş - yalnızca süper adminler' });
-  }
-});
-export { userAuth ,superAdminKontrol };
+
+export { userAuth  };
