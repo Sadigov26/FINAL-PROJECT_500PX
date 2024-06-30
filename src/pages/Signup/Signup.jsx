@@ -5,7 +5,7 @@ import Footer from '../../components/Footer/Footer';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCredentials } from '../../redux/slices/authSlice';
 import { useNavigate, Link } from 'react-router-dom';
-import { useRegisterMutation } from '../../redux/slices/usersApiSlice';
+import { useRegisterMutation, useSendVerificationEmailMutation } from '../../redux/slices/usersApiSlice.js';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -19,7 +19,8 @@ const Signup = () => {
     const dispatch = useDispatch();
 
     const { userInfo } = useSelector((state) => state.auth);
-    const [register, { isLoading }] = useRegisterMutation();
+    const [register, { isLoading: isRegistering }] = useRegisterMutation();
+    const [sendVerificationEmail, { isLoading: isSendingEmail }] = useSendVerificationEmailMutation();
 
     useEffect(() => {
         if (userInfo) {
@@ -48,7 +49,7 @@ const Signup = () => {
             return;
         }
         if (!surname) {
-            toast.error('Surame is required');
+            toast.error('Surname is required');
             return;
         }
         if (!password) {
@@ -62,17 +63,22 @@ const Signup = () => {
         }
 
         try {
+            // Kullanıcı kaydını yap
             const data = await register({ surname, name, email, password }).unwrap();
             dispatch(setCredentials({ ...data }));
+
+            // E-posta doğrulama kodu gönder
+            await sendVerificationEmail(email);
+
             navigate('/');
-            toast.success('Registration successful!');
+            toast.success('Registration successful! ');
         } catch (error) {
             toast.error(`Registration failed: ${error.data?.message || error.message}`);
         }
     };
 
     return (
-        <div >
+        <div>
             <Header />
             <div className={styles.Login}>
                 <ToastContainer position="top-right" />
@@ -131,8 +137,8 @@ const Signup = () => {
                             />
                         </div>
                         <div className={styles.EmailorUsername}>
-                            <button type="submit" disabled={isLoading}>
-                                {isLoading ? 'Creating User...' : 'Register'}
+                            <button type="submit" disabled={isRegistering || isSendingEmail}>
+                                {isRegistering ? 'Creating User...' : 'Register'}
                             </button>
                         </div>
                     </form>

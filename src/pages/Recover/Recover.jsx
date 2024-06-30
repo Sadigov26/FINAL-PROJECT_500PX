@@ -1,9 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from '../Login/Login.module.scss';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
+import { toast } from 'react-toastify';
 
 const Recover = () => {
+    const [emailOrUsername, setEmailOrUsername] = useState('');
+
+    const handleSendEmail = async () => {
+        // You can implement your logic to send recovery email here
+        try {
+            // Example fetch or axios call to your backend API
+            const response = await fetch('/api/recover-password', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ emailOrUsername }),
+            });
+
+            if (response.ok) {
+                toast.success('Password recovery email sent successfully.');
+            } else {
+                const errorData = await response.json();
+                throw new Error(errorData.message || 'Failed to send recovery email.');
+            }
+        } catch (error) {
+            toast.error(error.message);
+        }
+    };
+
     return (
         <div>
             <Header />
@@ -17,21 +43,26 @@ const Recover = () => {
                     </div>
                     <div className={styles.LoginContainerInput}>
                         <div className={styles.EmailorUsername}>
-                            <label htmlFor=""> <span>Email or Username*</span></label>
-                            <input type="text" />
+                            <label htmlFor="emailOrUsername"> <span>Email or Username*</span></label>
+                            <input
+                                type="text"
+                                id="emailOrUsername"
+                                value={emailOrUsername}
+                                onChange={(e) => setEmailOrUsername(e.target.value)}
+                            />
                         </div>
                         <div className={styles.EmailorUsername}>
-                            <button>Send email</button>
+                            <button onClick={handleSendEmail}>Send email</button>
                         </div>
                         <div className={styles.LoginContainerSignup}>
-                        <p>Don't have an account? <a href="/register">Sign up</a> </p>
-                    </div>
+                            <p>Don't have an account? <a href="/register">Sign up</a> </p>
+                        </div>
                     </div>
                 </div>
             </div>
             <Footer />
         </div>
-    )
-}
+    );
+};
 
-export default Recover
+export default Recover;

@@ -31,13 +31,48 @@ export const userApiSlice = apiSlice.injectEndpoints({
         body: data
       })
     }),
+
     getUserProfile: builder.query({
       query: () => ({
         url: `${USERS_URL}/profile`,
         method: 'GET'
       })
     }),
+    getAllUsers: builder.query({
+      query: () => ({
+        url: `${USERS_URL}/all`,
+        method: 'GET'
+      })
+    }),
+    deleteUser: builder.mutation({
+      query: (id) => ({
+        url: `${USERS_URL}/all/${id}`,
+        method: 'DELETE'
+      })
+    }),
+    updateUserByAdmin: builder.mutation({
+      query: ({ id ,...data}) => ({
+        url: `${USERS_URL}/all/${id}`,
+        method: 'PUT',
+        body: data,
+      }),
+    }),
+    forgotPassword: builder.mutation({
+      query: (data) => ({
+        url: `${USERS_URL}/forgot-password`,
+        method: "POST",
+        body: data,
+      }),
+    }),
+
+    sendVerificationEmail: builder.mutation({
+      query: (data) => ({
+        url: '/api/send-verification-email',
+        method: 'POST',
+        body: data,
+      }),
+    }),
   }),
 });
 
-export const { useLoginMutation, useLogoutMutation, useRegisterMutation, useUpdateUserMutation, useGetUserProfileQuery } = userApiSlice;
+export const { useUpdateUserByAdminMutation, useDeleteUserMutation, useGetAllUsersQuery, useLoginMutation, useSendVerificationEmailMutation, useLogoutMutation, useRegisterMutation, useUpdateUserMutation, useGetUserProfileQuery } = userApiSlice;
