@@ -1,5 +1,7 @@
+// mail.js
 import nodemailer from 'nodemailer';
 import dotenv from 'dotenv';
+import { generateCode } from './generateCode.js';
 
 dotenv.config();
 
@@ -13,24 +15,18 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-// 6 basamaklı rastgele bir kod oluştur
-const generateCode = () => {
-  return Math.floor(100000 + Math.random() * 900000).toString();
-};
-
-export const sendEmail = async (to, subject) => {
-  const code = generateCode(); // Kod oluştur
+// E-posta gönderme fonksiyonu
+export const sendEmail = async (to, subject, text) => {
   const mailOptions = {
     from: process.env.EMAIL,
     to,
     subject,
-    text: `Your confirmation code is ${code}`,
+    text,
   };
 
   try {
     await transporter.sendMail(mailOptions);
-    console.log(`Email sent to ${to} with code: ${code}`);
-    return code; // Oluşturulan kodu geri döndür
+    console.log(`Email sent to ${to}`);
   } catch (error) {
     console.error(`Error sending email to ${to}:`, error);
     throw error;

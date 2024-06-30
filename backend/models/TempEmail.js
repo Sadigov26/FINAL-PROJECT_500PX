@@ -13,7 +13,7 @@ const TempEmailSchema = new mongoose.Schema({
   createdAt: {
     type: Date,
     default: Date.now,
-    expires: 60,
+    expires: 60, // Expires after 60 seconds (adjust as needed)
   },
 });
 
