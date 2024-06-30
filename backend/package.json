@@ -1,12 +1,12 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "main": "index.js", // Backend uygulamasının giriş noktası, örneğin server.js
+  "main": "index.js", 
   "type": "module",
   "scripts": {
-    "start": "node index.js", // Backend için başlatma komutu
-    "server": "nodemon index.js" // Nodemon kullanarak serveri başlatma komutu
-    // Diğer scriptler buraya eklenebilir
+    "start": "node index.js",
+    "server": "nodemon index.js" 
+   
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -22,7 +22,7 @@
     "nodemailer": "^6.9.14",
     "nodemon": "^3.1.4",
     "uuid": "^10.0.0"
-    // Diğer bağımlılıklar buraya eklenebilir
+ 
   },
   "keywords": [],
   "author": "",
