@@ -1,0 +1,125 @@
+.Discover {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .DiscoverContainer {
+        max-width: 80%;
+        margin: 0 auto;
+        padding: 20px;
+
+        .discoverNavbar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-bottom: 30px;
+
+            ul {
+                display: flex;
+                gap: 20px;
+                align-items: center;
+
+                li {
+                    list-style: none;
+
+                    a {
+                        width: 100%;
+                        padding: 10px;
+                        text-decoration: none;
+                        color: black;
+                        font-size: 18px;
+                        font-weight: 400;
+                        display: block;
+                        border-bottom: 3px solid #fff;
+                        font-weight: 500;
+
+                        &:hover {
+                            border-bottom: 3px solid #2986F7;
+                            background-color: #F7F8FA;
+                        }
+                    }
+                }
+            }
+        }
+
+        .DiscoverContainerTop {
+            text-align: center;
+            margin-bottom: 20px;
+
+            h2 {
+                font-size: 2rem;
+                margin-bottom: 20px;
+                margin-top: 20px;
+            }
+
+            p {
+                font-size: 1rem;
+                color: #666;
+            }
+        }
+
+        .DiscoverContainerBottom {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+
+            .DiscoverCategoryItem {
+                position: relative;
+                text-align: center;
+                text-decoration: none;
+                color: #fff;
+                width: calc(50% - 10px);
+                max-width: 250px;
+                margin-bottom: 20px;
+                overflow: hidden;
+                border-radius: 8px;
+                background-color: rgba(0, 0, 0, 0.5);
+
+                img {
+                    width: 100%;
+                    max-width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 8px;
+                    transition: transform 0.4s ease-in-out;
+                    filter: brightness(0.6);
+                    transition: 0.5s;
+                }
+
+                &:hover {
+                    img {
+
+                        transform: scale(1.1);
+                        filter: brightness(0.9);
+                    }
+                }
+
+                p {
+                    position: absolute;
+                    bottom: 20px;
+                    left: 0;
+                    right: 0;
+                    margin: 0 auto;
+                    width: 100%;
+                    text-align: center;
+                    font-size: 18px;
+                    font-weight: bold;
+                    z-index: 2;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width:280px)and (max-width:424px) {
+    .Discover {
+        .DiscoverContainer {
+            .DiscoverContainerBottom {
+                p {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+}

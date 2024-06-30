@@ -1,0 +1,210 @@
+.search {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .searchBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 10px;
+    width: 80%;
+    margin-top: 20px;
+
+    input {
+      padding: 10px;
+      font-size: 16px;
+      width: 300px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+
+    }
+
+    .new {
+      border-radius: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        width: 60px;
+        cursor: pointer;
+      }
+    }
+
+    svg {
+      cursor: pointer;
+    }
+  }
+
+  h2 {
+    margin-bottom: 20px;
+    font-size: 26px;
+    color: #333;
+  }
+
+  .myMasonryGrid {
+    display: flex;
+    width: auto;
+    gap: 20px;
+  }
+
+  .myMasonryGridColumn {
+    background-clip: padding-box;
+  }
+
+  .imageContainer {
+    position: relative;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    max-width: 100%;
+
+    &:hover {
+      .addButton {
+        display: block;
+      }
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s;
+
+    }
+
+    .addButton {
+      display: none;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: transparent;
+      color: white;
+      padding: 8px;
+      border: 1px solid white;
+      border-radius: 100px;
+      cursor: pointer;
+      color: #e51e1e;
+      transition: background-color 0.3s;
+      transition: 0.5s;
+
+      &:hover {
+        background-color: #e51e1e;
+        color: white;
+        border: 1px solid transparent;
+        transition: 0.5s;
+      }
+
+    }
+  }
+
+  .spinnerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .spinner {
+    width: 56px;
+    height: 56px;
+    display: grid;
+    border: 4px solid #0000;
+    border-radius: 50%;
+    border-right-color: #299fff;
+    animation: tri-spinner 1s infinite linear;
+
+    &::before,
+    &::after {
+      content: "";
+      grid-area: 1/1;
+      margin: 2px;
+      border: inherit;
+      border-radius: 50%;
+      animation: tri-spinner 2s infinite;
+    }
+
+    &::after {
+      margin: 8px;
+      animation-duration: 3s;
+    }
+  }
+
+  .loader {
+    color: #4a4a4a;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+    box-sizing: content-box;
+    height: 40px;
+    padding: 10px;
+    display: flex;
+    border-radius: 8px;
+  }
+
+  .words {
+    overflow: hidden;
+  }
+
+  .word {
+    display: block;
+    height: 100%;
+    padding-left: 6px;
+    color: #299fff;
+    animation: cycle-words 5s infinite;
+  }
+
+  @keyframes cycle-words {
+    10% {
+      transform: translateY(-105%);
+    }
+
+    25% {
+      transform: translateY(-100%);
+    }
+
+    35% {
+      transform: translateY(-205%);
+    }
+
+    50% {
+      transform: translateY(-200%);
+    }
+
+    60% {
+      transform: translateY(-305%);
+    }
+
+    75% {
+      transform: translateY(-300%);
+    }
+
+    85% {
+      transform: translateY(-405%);
+    }
+
+    100% {
+      transform: translateY(-400%);
+    }
+  }
+}
+
+@media screen and (min-width:280px) and (max-width:600px) {
+  .search {
+    .imageContainer {
+      .addButton {
+        display: block;
+      }
+    }
+  }
+}
