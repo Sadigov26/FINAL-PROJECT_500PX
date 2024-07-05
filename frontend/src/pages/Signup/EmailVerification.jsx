@@ -18,7 +18,7 @@ const EmailVerification = () => {
         e.preventDefault();
         try {
             await confirmEmail({ email, code: verificationCode }).unwrap();
-            toast.success('E-posta başarıyla doğrulandı! Lütfen e-posta kutunuzu kontrol edin.');
+            toast.success('E-posta başarıyla doğrulandı!');
             navigate('/');
         } catch (error) {
             toast.error(`Doğrulama başarısız: ${error.data?.message || error.message}`);

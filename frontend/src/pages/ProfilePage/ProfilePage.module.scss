@@ -1,106 +1,218 @@
+/* ProfilePage.module.scss */
+
 .container {
-  width: 100%;
-  height: 100vh;
-  background-color: #f0f0f0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  max-width: 90%;
+  margin: 0 auto;
   padding: 20px;
 }
 
-.headBox {
-  width: 100%;
-  justify-content: space-between;
-  display: flex;
-  height: 10%;
-  gap: 10px;
-}
-
-.headBox .btnhead {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 0px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  height: 35px;
-}
-
-.headBox .btnhead:hover {
-  background-color: #0056b3;
-}
 .main {
-  width: 100%;
-  height: 90%;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
 }
 
 .proContainer {
-  width: 100%;
-  max-width: 500px;
-  background-color: white;
+  flex: 25%;
+  margin-right: 20px;
   padding: 20px;
-  border-radius: 10px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
- 
-  .profilePhotoContainer{
-      width: 20%;
-      img{
-          width: 100%;
-      }
-  }
 }
 
-.proContainer h1 {
+.headBox {
   margin-bottom: 20px;
-  font-size: 24px;
-  color: #333;
 }
 
+.btnHead {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.btnHead:hover {
+  background-color: #2980b9;
+}
+
+.profileInfo {
+  margin-top: 20px;
+}
+.dataGroup{
+  display: flex;
+  justify-content: space-between;
+}
 .form {
-  width: 100%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .inputGroup {
-  width: 100%;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: start;flex-direction: column;
 }
-
-.inputGroup label {
-  display: block;
-  margin-bottom: 5px;
+.dashboardContainerBottom{
+  flex-wrap: wrap;
+  width: 100%;
+}
+.dataNotFound{
+  display: grid;
+ width: 100%;
+align-items: center;
+height: 70vh;
+  justify-items: center;
+}
+.emptyMessage{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.label {
   font-weight: bold;
-  color: #555;
-}
+  margin-right: 20px;
+  width: 120px;
+  text-align: right;
 
-.inputGroup input {
+}
+.inputandbutton{
+  display: flex;
   width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+}
+input {
+  flex: 1;
+  padding: 12px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
   font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
 }
 
-.submitButton {
-  width: 100%;
-  background-color: #28a745;
-  color: white;
-  padding: 10px;
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: #3498db;
+}
+
+.updateButton,
+.cancelButton {
+  background-color: #3498db;
+  color: #fff;
   border: none;
-  border-radius: 5px;
+  padding: 12px 20px;
+  border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
+  transition: background-color 0.3s ease;
+  margin-left: 10px;
 }
 
-.submitButton:hover {
-  filter: brightness(0.8);
+.updateButton:hover,
+.cancelButton:hover {
+  background-color: #2980b9;
+}
+
+.cancelButton {
+  background-color: #e74c3c;
+}
+
+.profileData {
+  flex: 70%;
+  margin-left: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.dataGroup {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.dataLabel {
+  font-weight: bold;
+  margin-right: 20px;
+  width: 120px;
+  text-align: right;
+}
+
+.dataValue {
+  font-size: 16px;
+  color: #333;
+  flex: 1;
+}
+
+.editButton {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.editButton:hover {
+  background-color: #2980b9;
+}
+
+.dashboard {
+  flex: 70%;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.dashboardTitle {
+  margin-bottom: 15px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.dashboardCardsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  /* Align photos left to right */
+  gap: 20px;
+  width: 100%;
+
+  .dashboardContainerBottom {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    /* Align photos left to right */
+    gap: 20px;
+  }
+}
+.dashboardCards {
+  width: 23%; /* Her sütun için genişlik ayarı */
+  margin-bottom: 20px;
+  padding: 15px;
+  height: 220px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.dashboardCards img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
 }
 
 .Btn {
