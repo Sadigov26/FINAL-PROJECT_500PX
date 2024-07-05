@@ -127,6 +127,7 @@ export const registerUser = async (req, res) => {
     });
 
     if (user) {
+      generateToken(res, user._id);
       await sendEmail(email, 'Confirm Your Email', confirmCode);
 
       res.status(201).json({
