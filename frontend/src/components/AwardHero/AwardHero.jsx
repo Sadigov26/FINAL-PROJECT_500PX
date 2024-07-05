@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './AwardHero.module.scss'
-import globalphotoaward1 from '../../about/cover-1.2d1f05e2.jpg'
+import globalphotoaward1 from '../../about/before.0ba3c5f1.jpg'
 import globalphotoaward2 from '../../about/cover-3.d239b977.jpg'
 import globalphotoaward3 from '../../about/cover-5.7eb55329.jpg'
 import globalphotoaward4 from '../../about/cover-7.0548a61d.jpg'

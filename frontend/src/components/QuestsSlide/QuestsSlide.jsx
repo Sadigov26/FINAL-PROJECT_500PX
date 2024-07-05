@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import styles from './QuestsSlide.module.scss';
-import desktopOne from '../../about/desktop.jpg';
+import desktopOne from '../../about/banner_portfolio_desktop.7c38b910.png';
 import desktopTwo from '../../about/desktop (1).jpg';
-import desktopThree from '../../about/desktop (2).jpg';
+import desktopThree from '../../about/banner_quests_desktop@2x.69ef9bf3 (1).png';
 import { FaChevronLeft } from "react-icons/fa6";
 import { FaChevronRight } from "react-icons/fa6";
 

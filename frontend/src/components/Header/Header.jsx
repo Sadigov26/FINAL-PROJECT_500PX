@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styles from './Header.module.scss';
 import Modal from '../Modal/Modal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMagnifyingGlass, faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
+import { faMagnifyingGlass, faRightFromBracket, faUpload } from '@fortawesome/free-solid-svg-icons';
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 import { TbAntennaBars1 } from 'react-icons/tb';
 import { FaBars, FaRegCompass } from 'react-icons/fa6';
@@ -150,7 +150,7 @@ const Header = ({ hideSearch }) => {
                   {userInfo &&
                     <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
                       <a style={{ fontSize: "19px" }} href="/like"><FontAwesomeIcon icon={faHeart} style={{ fontSize: "17px" }} /></a>
-                      <a href=""><FontAwesomeIcon icon={faArrowUp} style={{ paddingRight: "10px" }} />Upload</a>
+                      <a href="/upload"><FontAwesomeIcon icon={faArrowUp} style={{ paddingRight: "10px" }} />Upload</a>
                       <img src="https://pacdn.500px.org/userpic.png" alt="" onClick={() => navigate("/profile")} style={{ cursor: "pointer" }} />
                     </div>}
 
@@ -176,7 +176,7 @@ const Header = ({ hideSearch }) => {
                       </li>
                     }
                     {userInfo &&
-                      <a style={{ padding: "0px", width: "100px" , color:"red" }} href='/register' onClick={handleLogout}>Logout <FontAwesomeIcon icon={faRightFromBracket} style={{marginLeft:"10px"}}/></a>}
+                      <a style={{ padding: "0px", width: "100px", color: "red" }} href='/register' onClick={handleLogout}>Logout <FontAwesomeIcon icon={faRightFromBracket} style={{ marginLeft: "10px" }} /></a>}
                   </ul>
                 )}
               </div>
@@ -186,11 +186,16 @@ const Header = ({ hideSearch }) => {
             <a style={{ color: "#fcfbf7", fontSize: "19px" }} href="/discover"><FaRegCompass /></a>
             <a style={{ color: "#fcfbf7", fontSize: "19px" }} href="/like"><FontAwesomeIcon icon={faHeart} style={{ fontSize: "17px" }} /></a>
             <a style={{ color: "#fcfbf7", fontSize: "19px" }} href="/quests"><BsRocketTakeoffFill /></a>
-           {!userInfo &&
-            <a style={{ color: "#fcfbf7", fontSize: "19px" }} href="/login"><FaRegUserCircle /></a>
+            {!userInfo &&
+              <a style={{ color: "#fcfbf7", fontSize: "19px" }} href="/login">    <FontAwesomeIcon icon={faUpload} /></a>
             }
             {userInfo &&
-            <a style={{ color: "#fcfbf7", fontSize: "19px" }} href="/profile"><FaRegUserCircle /></a>}
+              <a style={{ color: "#fcfbf7", fontSize: "19px" }} href="/upload">    <FontAwesomeIcon icon={faUpload} /></a>}
+            {!userInfo &&
+              <a style={{ color: "#fcfbf7", fontSize: "19px" }} href="/login"><FaRegUserCircle /></a>
+            }
+            {userInfo &&
+              <a style={{ color: "#fcfbf7", fontSize: "19px" }} href="/profile"><FaRegUserCircle /></a>}
           </div>
         </div>
       </header>

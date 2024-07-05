@@ -2,7 +2,6 @@ import React from 'react'
 import styles from './Grants.module.scss'
 import secondImage from '../../about/image copy 6.png'
 import five1 from '../../about/image copy 7.png'
-import five2 from '../../about/image copy 8.png'
 import five3 from '../../about/image copy 9.png'
 import five4 from '../../about/image copy 10.png'
 import five5 from '../../about/image copy 11.png'
@@ -120,7 +119,7 @@ const Grants = () => {
                                 </div>
                             </div>
                             <div className={styles.GrantsFiveContainerMiddleRight}>
-                                <img src={five2} alt="" />
+                            <img src={five4} alt="" />
                             </div>
                         </div>
                         <div className={styles.GrantsFiveContainerBottom}>
@@ -128,7 +127,6 @@ const Grants = () => {
                                 <img src={five3} alt="" />
                             </div>
                             <div className={styles.GrantsFiveContainerBottomRight}>
-                                <img src={five4} alt="" />
                                 <img src={five5} alt="" />
                             </div>
                         </div>
